@@ -1,0 +1,4 @@
+C:\Programming\CRMRevitTools-v2020\Visual Studio\CRMTools\CRMTools\bin\x64\Release\CRMTools.dll
+C:\Programming\CRMRevitTools-v2020\Visual Studio\CRMTools\CRMTools\bin\x64\Release\CRMTools.pdb
+C:\Programming\CRMRevitTools-v2020\Visual Studio\CRMTools\CRMTools\obj\x64\Release\CRMTools.dll
+C:\Programming\CRMRevitTools-v2020\Visual Studio\CRMTools\CRMTools\obj\x64\Release\CRMTools.pdb

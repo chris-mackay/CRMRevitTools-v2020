@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+<link type="text/css" rel="stylesheet" href="css/style.css"/>
+<link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+
+    <title>Shared Parameter Creator</title>
+
+</head>
+
+
+<body class="backcolor">
+
+    <div id="content">
+
+        <h1><img class="inText" src="images/shared_parameter_creator/cmdSharedParameterCreator_32x32.png" /><strong>Shared Parameter Creator</strong></h1>
+
+        <hr>
+
+        <img class="center_img" src="images/shared_parameter_creator/main_form.png" />
+
+        <p id="center_text">
+            <img class="inText" src="images/shared_parameter_creator/cmdSharedParameterCreator_16x16.png" /><strong>Shared Parameter Creator</strong> allows you to create an entire Shared Parameter (.txt) file from a CSV (Comma delimited) (*.csv) file. You also have the option to insert the newly created parameters directly into your project all at once.
+        </p>
+
+        <h2>Follow the steps below to create your Shared Parameter file</h2>
+
+        <ol>            
+            <li>Click <strong>Open Template</strong>. This will create a working directory on your Desktop and open a working file for you to use. 
+                Below are the available fields for you to enter data. The items that do not have a drop down list are provided by you and can be anything.
+                <ul>
+                    <li><strong>Category</strong>: Select the category that you want this parameter to be associated with. The available categories can be found in the drop down list.
+                        <img id="center_img" src="images/shared_parameter_creator/categories.png" border="1" />
+                        <img id="center_img" src="images/shared_parameter_creator/categories_revit.png"/>
+                    </li>
+                    <li><strong>Shared Parameter Group</strong> (User Defined): The group the parameter will be filed under in <strong>Edit Shared Parameters</strong>
+                        <img id="center_img" src="images/shared_parameter_creator/shared_parameter_group.png" border="1" />
+                        <img id="center_img" src="images/shared_parameter_creator/parameter_group.png" />
+                    </li>
+                    <li><strong>Type of Parameter</strong>: This defines what type of data you want the parameter to store
+                        <img id="center_img" src="images/shared_parameter_creator/data_type.png" border="1" />
+                        <img id="center_img" src="images/shared_parameter_creator/data_type_revit.png" />
+                    </li>
+                    <li><strong>Binding</strong>: This defines whether you want the parameter to be a <strong>Type</strong> parameter or an <strong>Instance</strong> parameter
+                        <img id="center_img" src="images/shared_parameter_creator/binding.png" border="1" />
+                        <img id="center_img" src="images/shared_parameter_creator/binding_revit.png" />
+                    </li>
+                    <li><strong>Parameter Name</strong> (User Defined): Provide a name for the parameter
+                        <img id="center_img" src="images/shared_parameter_creator/parameter_name.png" border="1" />
+                        <img id="center_img" src="images/shared_parameter_creator/parameter_name_revit.png" />
+                    </li>
+                </ul>
+            </li>
+            <li><strong>Save As</strong> the working file as a <strong>CSV (Comma delimited) (*.csv)</strong> file. The file will be saved in the working directory on your Desktop.
+                <img id="center_img" src="images/shared_parameter_creator/save_as_csv.png" border="1"/>
+            </li>
+            <li>Click <strong>OK</strong> in the dialog message below, then close Excel.
+                <img id="center_img" src="images/shared_parameter_creator/multiple_sheets.png" />
+            </li>
+            <li>Click <strong>Browse</strong> to select the (.csv) file to create the Shared Parameters (.txt) file. The open file dialog will default to the working directory on your Desktop.
+                <img id="center_img" src="images/shared_parameter_creator/browse.png" />
+            </li>
+            <li>Select the (.csv) file from the dialog
+                <img id="center_img" src="images/shared_parameter_creator/select_csv.png" border="1" />
+            </li>
+            <li><strong>Insert into Project Parameters</strong> (Optional): You have the option to insert all the newly created parameters directly into your project all at once
+                <img id="center_img" src="images/shared_parameter_creator/insert.png" />
+                <img id="center_img" src="images/shared_parameter_creator/project_parameters.png" />
+            </li>
+            <li>Click <strong>OK</strong>, then <strong>Yes</strong> to confirm and the Shared Parameter (.txt) file will be created in the working directory on your Desktop. Below are the final contents of the working directory.
+                <img id="center_img" src="images/shared_parameter_creator/folder_contents.png" border="1"/>
+            </li>
+        </ol>
+
+        <div class="clearfooter"></div>
+        <div id="footer">Copyright &#169 2018 Christopher Mackay</div>
+
+    </div>
+
+</body>
+
+</html>

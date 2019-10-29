@@ -1,0 +1,6 @@
+C:\Programming\CRMRevitTools-v2020\Visual Studio\ProjectParameters\ProjectParameters\bin\x64\Debug\ProjectParameters.dll
+C:\Programming\CRMRevitTools-v2020\Visual Studio\ProjectParameters\ProjectParameters\bin\x64\Debug\ProjectParameters.pdb
+C:\Programming\CRMRevitTools-v2020\Visual Studio\ProjectParameters\ProjectParameters\obj\x64\Debug\ProjectParameters.MainForm.resources
+C:\Programming\CRMRevitTools-v2020\Visual Studio\ProjectParameters\ProjectParameters\obj\x64\Debug\ProjectParameters.csproj.GenerateResource.cache
+C:\Programming\CRMRevitTools-v2020\Visual Studio\ProjectParameters\ProjectParameters\obj\x64\Debug\ProjectParameters.dll
+C:\Programming\CRMRevitTools-v2020\Visual Studio\ProjectParameters\ProjectParameters\obj\x64\Debug\ProjectParameters.pdb

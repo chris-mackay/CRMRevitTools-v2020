@@ -1,0 +1,4 @@
+C:\Programming\CRMRevitTools-v2020\Visual Studio\CreateRevitSheets\CreateRevitSheets\bin\x64\Release\CreateRevitSheets.dll
+C:\Programming\CRMRevitTools-v2020\Visual Studio\CreateRevitSheets\CreateRevitSheets\bin\x64\Release\CreateRevitSheets.pdb
+C:\Programming\CRMRevitTools-v2020\Visual Studio\CreateRevitSheets\CreateRevitSheets\obj\x64\Release\CreateRevitSheets.dll
+C:\Programming\CRMRevitTools-v2020\Visual Studio\CreateRevitSheets\CreateRevitSheets\obj\x64\Release\CreateRevitSheets.pdb

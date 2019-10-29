@@ -1,0 +1,4 @@
+C:\Programming\CRMRevitTools-v2020\Visual Studio\SheetRenamer\SheetRenamer\bin\x64\Release\SheetRenamer.dll
+C:\Programming\CRMRevitTools-v2020\Visual Studio\SheetRenamer\SheetRenamer\bin\x64\Release\SheetRenamer.pdb
+C:\Programming\CRMRevitTools-v2020\Visual Studio\SheetRenamer\SheetRenamer\obj\x64\Release\SheetRenamer.dll
+C:\Programming\CRMRevitTools-v2020\Visual Studio\SheetRenamer\SheetRenamer\obj\x64\Release\SheetRenamer.pdb

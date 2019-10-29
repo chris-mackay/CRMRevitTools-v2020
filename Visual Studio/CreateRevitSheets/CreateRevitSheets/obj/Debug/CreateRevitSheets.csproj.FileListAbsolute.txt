@@ -1,0 +1,5 @@
+C:\Programming\CRMRevitTools-v2020\Visual Studio\CreateRevitSheets\CreateRevitSheets\bin\Debug\CreateRevitSheets.dll
+C:\Programming\CRMRevitTools-v2020\Visual Studio\CreateRevitSheets\CreateRevitSheets\bin\Debug\CreateRevitSheets.pdb
+C:\Programming\CRMRevitTools-v2020\Visual Studio\CreateRevitSheets\CreateRevitSheets\obj\Debug\CreateRevitSheets.csprojAssemblyReference.cache
+C:\Programming\CRMRevitTools-v2020\Visual Studio\CreateRevitSheets\CreateRevitSheets\obj\Debug\CreateRevitSheets.dll
+C:\Programming\CRMRevitTools-v2020\Visual Studio\CreateRevitSheets\CreateRevitSheets\obj\Debug\CreateRevitSheets.pdb

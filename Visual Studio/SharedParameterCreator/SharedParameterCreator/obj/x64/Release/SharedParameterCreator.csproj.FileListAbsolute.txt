@@ -1,0 +1,6 @@
+C:\Programming\CRMRevitTools-v2020\Visual Studio\SharedParameterCreator\SharedParameterCreator\bin\x64\Release\SharedParameterCreator.dll
+C:\Programming\CRMRevitTools-v2020\Visual Studio\SharedParameterCreator\SharedParameterCreator\bin\x64\Release\SharedParameterCreator.pdb
+C:\Programming\CRMRevitTools-v2020\Visual Studio\SharedParameterCreator\SharedParameterCreator\obj\x64\Release\SharedParameterCreator.MainForm.resources
+C:\Programming\CRMRevitTools-v2020\Visual Studio\SharedParameterCreator\SharedParameterCreator\obj\x64\Release\SharedParameterCreator.csproj.GenerateResource.cache
+C:\Programming\CRMRevitTools-v2020\Visual Studio\SharedParameterCreator\SharedParameterCreator\obj\x64\Release\SharedParameterCreator.dll
+C:\Programming\CRMRevitTools-v2020\Visual Studio\SharedParameterCreator\SharedParameterCreator\obj\x64\Release\SharedParameterCreator.pdb
