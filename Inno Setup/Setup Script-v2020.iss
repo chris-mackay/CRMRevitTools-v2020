@@ -7,7 +7,7 @@
 [Setup]
 AppId={{8369C0A4-4FB0-4531-992F-109221FE6584}
 AppName={#MyAppName}
-AppCopyright=Copyright © 2018-2019 Christopher Ryan Mackay
+AppCopyright=Copyright © 2019 Christopher Ryan Mackay
 AppVersion={#MyAppVersion}
 VersionInfoVersion={#MyVersionInfoVersion}
 AppPublisher={#MyAppPublisher}
