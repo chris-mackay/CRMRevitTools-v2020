@@ -1,4 +1,4 @@
-﻿//    Copyright(C) 2019 Christopher Ryan Mackay
+﻿//    Copyright(C) 2019-2020  Christopher Ryan Mackay
 
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -90,6 +90,26 @@ namespace CRMTools
 
             #endregion
 
+            #region CreateSheetSet
+
+            // Create a push button
+            PushButtonData btnCreateSheetSet = new PushButtonData("cmdCreateSheetSet", "Create \nSheet Set", commandsPath + "CreateSheetSet.dll", "CreateSheetSet.Class1");
+            btnCreateSheetSet.ToolTip = "Create a Sheet Set based on revision properties";
+            btnCreateSheetSet.LongDescription = "Select between Revision Description, Revision Number, and Revision Date to create a Sheet Set containing all the drawings associated with that property";
+
+            // create bitmap image for button
+            Uri uriLargeImage_CreateSheetSet = new Uri(iconsPath + @"32x32\cmdCreateSheetSet_32x32.bmp");
+            BitmapImage largeImage_CreateSheetSet = new BitmapImage(uriLargeImage_CreateSheetSet);
+
+            // create bitmap image for button
+            Uri uriSmallImage_CreateSheetSet = new Uri(iconsPath + @"16x16\cmdCreateSheetSet_16x16.bmp");
+            BitmapImage smallImage_CreateSheetSet = new BitmapImage(uriSmallImage_CreateSheetSet);
+
+            btnCreateSheetSet.LargeImage = largeImage_CreateSheetSet;
+            btnCreateSheetSet.Image = smallImage_CreateSheetSet;
+
+            #endregion
+
             #region SheetRenamer
 
             PushButtonData btnSheetRenamer = new PushButtonData("cmdSheetRenamer", "Sheet \nRenamer", commandsPath + "SheetRenamer.dll", "SheetRenamer.Class1");
@@ -144,6 +164,7 @@ namespace CRMTools
             // Add the buttons to the panel
             productionButtons.Add(pnlProductionPanel.AddItem(btnCreateRevitSheets));
             productionButtons.Add(pnlProductionPanel.AddItem(btnSharedParameterCreator));
+            productionButtons.Add(pnlProductionPanel.AddItem(btnCreateSheetSet));
             productionButtons.Add(pnlProductionPanel.AddItem(btnSheetRenamer));
             productionButtons.Add(pnlProductionPanel.AddItem(btnProjectParameters));
 

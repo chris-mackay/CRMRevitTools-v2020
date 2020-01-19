@@ -1,13 +1,13 @@
 #define RevitVersion "2020"
 #define MyAppName "CRMRevitTools-v2020"
-#define MyAppVersion "1.0.0"
-#define MyVersionInfoVersion "1.0.0"
+#define MyAppVersion "1.0.1"
+#define MyVersionInfoVersion "1.0.1"
 #define MyAppPublisher "Christopher Ryan Mackay"
 
 [Setup]
 AppId={{8369C0A4-4FB0-4531-992F-109221FE6584}
 AppName={#MyAppName}
-AppCopyright=Copyright © 2019 Christopher Ryan Mackay
+AppCopyright=Copyright © 2019-2020 Christopher Ryan Mackay
 AppVersion={#MyAppVersion}
 VersionInfoVersion={#MyVersionInfoVersion}
 AppPublisher={#MyAppPublisher}

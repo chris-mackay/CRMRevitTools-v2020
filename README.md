@@ -1,6 +1,6 @@
 # CRMRevitTools-v2020
 
-![Ribbon](ribbon.png?raw=true "Ribbon")
+![Ribbon](CRMRevitTools_Help/ribbon.png?raw=true "Ribbon")
 
 #### This repository is meant to be a template for creating your own Revit tab menu with custom commands.
 *Cloning this entire repository is required to build the (.exe) installer in the Inno Setup folder*
@@ -18,7 +18,7 @@
    * *MenuCreator*: Location where the latest `CRMTools.dll` file needs to be placed to build the installer
    * *RevitIcons*: Location where all the referenced `image_name.bmp` files for `CRMTools.dll` need to be placed to build the installer 
      * There is a directory for both 16x16 and 32x32 size images. Revit requires images to be `Bitmap image` files.
- * `CRMRevitTools-v2020-v1.0.2 Setup.exe`. The file that is produced after compiling `Setup Script-v2020.iss`. The version number is determined by the `MyAppVersion` and `MyVersionInfoVersion` `#define` directives in Inno Setup.
+ * `CRMRevitTools-v2020-v1.0.1 Setup.exe`. The file that is produced after compiling `Setup Script-v2020.iss`. The version number is determined by the `MyAppVersion` and `MyVersionInfoVersion` `#define` directives in Inno Setup.
  * `CRMRevitToolsInit-v2020.exe`: A simple console application that runs at the end of the installation to replace `REPLACEUSERNAME` in the `ADDIN File` to `System.Environment.UserName`.
  * `LICENSE.txt`: Inno Setup license file
  * `Setup Script-v2020.iss`: Inno Setup Script file
@@ -35,3 +35,15 @@
 
 ### Parameter_Template-v2020.xlsx
  * The template that is used with the **Shared Parameter Creator** command.
+
+# Included Commands
+## Create Sheets
+![CreateSheets](CRMRevitTools_Help/images/create_revit_sheets/main_form.png?raw=true "CreateSheets")
+## Shared Parameter Creator
+![SharedParameterCreator](CRMRevitTools_Help/images/shared_parameter_creator/main_form.png?raw=true "SharedParameterCreator")
+## Create Sheet Set
+![CreateSheetSet](CRMRevitTools_Help/create_sheet_set.png?raw=true "CreateSheetSet")
+## Sheet Renamer
+![SheetRenamer](CRMRevitTools_Help/images/sheet_renamer/main_form.png?raw=true "SheetRenamer")
+## Insert into Project Parameters
+![InsertIntoProjectParameters](CRMRevitTools_Help/project_parameters.png?raw=true "InsertIntoProjectParameters")
