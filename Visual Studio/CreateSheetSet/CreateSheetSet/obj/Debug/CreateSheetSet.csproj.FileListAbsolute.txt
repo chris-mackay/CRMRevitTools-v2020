@@ -1,4 +1,5 @@
 C:\Programming\CRMRevitTools-v2020\Visual Studio\CreateSheetSet\CreateSheetSet\bin\Debug\CreateSheetSet.dll
 C:\Programming\CRMRevitTools-v2020\Visual Studio\CreateSheetSet\CreateSheetSet\bin\Debug\CreateSheetSet.pdb
+C:\Programming\CRMRevitTools-v2020\Visual Studio\CreateSheetSet\CreateSheetSet\obj\Debug\CreateSheetSet.csprojAssemblyReference.cache
 C:\Programming\CRMRevitTools-v2020\Visual Studio\CreateSheetSet\CreateSheetSet\obj\Debug\CreateSheetSet.dll
 C:\Programming\CRMRevitTools-v2020\Visual Studio\CreateSheetSet\CreateSheetSet\obj\Debug\CreateSheetSet.pdb

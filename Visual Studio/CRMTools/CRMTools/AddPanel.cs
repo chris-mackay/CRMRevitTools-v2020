@@ -1,4 +1,4 @@
-﻿//    Copyright(C) 2019-2020  Christopher Ryan Mackay
+﻿//    Copyright(C) 2020  Christopher Ryan Mackay
 
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -155,6 +155,26 @@ namespace CRMTools
 
             #endregion
 
+            #region RevisionOnSheets
+
+            // Create a push button
+            PushButtonData btnRevisionOnSheets = new PushButtonData("cmdRevisionOnSheets", "Revision \nOn Sheets", commandsPath + "RevisionOnSheets.dll", "RevisionOnSheets.Class1");
+            btnRevisionOnSheets.ToolTip = "Apply or unapply a revision to multiple sheets at once";
+            btnRevisionOnSheets.LongDescription = "Select the revision sequence from the drop-down list that you want to apply or unapply from the list of sheets in the project";
+
+            // create bitmap image for button
+            Uri uriLargeImage_RevisionOnSheets = new Uri(iconsPath + @"32x32\cmdRevisionOnSheets_32x32.bmp");
+            BitmapImage largeImage_RevisionOnSheets = new BitmapImage(uriLargeImage_RevisionOnSheets);
+
+            // create bitmap image for button
+            Uri uriSmallImage_RevisionOnSheets = new Uri(iconsPath + @"16x16\cmdRevisionOnSheets_16x16.bmp");
+            BitmapImage smallImage_RevisionOnSheets = new BitmapImage(uriSmallImage_RevisionOnSheets);
+
+            btnRevisionOnSheets.LargeImage = largeImage_RevisionOnSheets;
+            btnRevisionOnSheets.Image = smallImage_RevisionOnSheets;
+
+            #endregion
+
             #region ProductionPanelItems
 
             // Create a ribbon panel
@@ -167,6 +187,7 @@ namespace CRMTools
             productionButtons.Add(pnlProductionPanel.AddItem(btnCreateSheetSet));
             productionButtons.Add(pnlProductionPanel.AddItem(btnSheetRenamer));
             productionButtons.Add(pnlProductionPanel.AddItem(btnProjectParameters));
+            productionButtons.Add(pnlProductionPanel.AddItem(btnRevisionOnSheets));
 
             #endregion
 

@@ -48,7 +48,7 @@ namespace CreateSheetSet
             this.btnCreate = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.rbDescription = new System.Windows.Forms.RadioButton();
+            this.rbSequence = new System.Windows.Forms.RadioButton();
             this.rbNumber = new System.Windows.Forms.RadioButton();
             this.rbDate = new System.Windows.Forms.RadioButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -108,16 +108,16 @@ namespace CreateSheetSet
             this.label1.Text = "Select a revision from the dropdown list below to create\r\na sheet set containing " +
     "all the sheets with the selected \r\nrevision property";
             // 
-            // rbDescription
+            // rbSequence
             // 
-            this.rbDescription.AutoSize = true;
-            this.rbDescription.Location = new System.Drawing.Point(22, 23);
-            this.rbDescription.Name = "rbDescription";
-            this.rbDescription.Size = new System.Drawing.Size(78, 17);
-            this.rbDescription.TabIndex = 0;
-            this.rbDescription.Text = "Description";
-            this.rbDescription.UseVisualStyleBackColor = true;
-            this.rbDescription.CheckedChanged += new System.EventHandler(this.radioButtonCheckChanged);
+            this.rbSequence.AutoSize = true;
+            this.rbSequence.Location = new System.Drawing.Point(22, 23);
+            this.rbSequence.Name = "rbSequence";
+            this.rbSequence.Size = new System.Drawing.Size(118, 17);
+            this.rbSequence.TabIndex = 0;
+            this.rbSequence.Text = "Revision Sequence";
+            this.rbSequence.UseVisualStyleBackColor = true;
+            this.rbSequence.CheckedChanged += new System.EventHandler(this.radioButtonCheckChanged);
             // 
             // rbNumber
             // 
@@ -145,7 +145,7 @@ namespace CreateSheetSet
             // 
             this.groupBox1.Controls.Add(this.rbNumber);
             this.groupBox1.Controls.Add(this.rbDate);
-            this.groupBox1.Controls.Add(this.rbDescription);
+            this.groupBox1.Controls.Add(this.rbSequence);
             this.groupBox1.Location = new System.Drawing.Point(15, 73);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(161, 100);
@@ -187,7 +187,7 @@ namespace CreateSheetSet
         private System.Windows.Forms.Button btnCreate;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton rbDescription;
+        private System.Windows.Forms.RadioButton rbSequence;
         private System.Windows.Forms.RadioButton rbNumber;
         private System.Windows.Forms.RadioButton rbDate;
         private System.Windows.Forms.GroupBox groupBox1;
