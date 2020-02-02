@@ -18,7 +18,7 @@
    * *MenuCreator*: Location where the latest `CRMTools.dll` file needs to be placed to build the installer
    * *RevitIcons*: Location where all the referenced `image_name.bmp` files for `CRMTools.dll` need to be placed to build the installer 
      * There is a directory for both 16x16 and 32x32 size images. Revit requires images to be `Bitmap image` files.
- * `CRMRevitTools-v2020-v1.0.1 Setup.exe`. The file that is produced after compiling `Setup Script-v2020.iss`. The version number is determined by the `MyAppVersion` and `MyVersionInfoVersion` `#define` directives in Inno Setup.
+ * `CRMRevitTools-v2020-v1.0.2 Setup.exe`. The file that is produced after compiling `Setup Script-v2020.iss`. The version number is determined by the `MyAppVersion` and `MyVersionInfoVersion` `#define` directives in Inno Setup.
  * `CRMRevitToolsInit-v2020.exe`: A simple console application that runs at the end of the installation to replace `REPLACEUSERNAME` in the `ADDIN File` to `System.Environment.UserName`.
  * `LICENSE.txt`: Inno Setup license file
  * `Setup Script-v2020.iss`: Inno Setup Script file
@@ -47,3 +47,5 @@
 ![SheetRenamer](CRMRevitTools_Help/images/sheet_renamer/main_form.png?raw=true "SheetRenamer")
 ## Insert into Project Parameters
 ![InsertIntoProjectParameters](CRMRevitTools_Help/project_parameters.png?raw=true "InsertIntoProjectParameters")
+## Revision On Sheets
+![RevisionOnSheets](CRMRevitTools_Help/revision_on_sheets.png?raw=true "RevisionOnSheets")
