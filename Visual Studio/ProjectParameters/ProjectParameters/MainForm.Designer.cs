@@ -1,4 +1,4 @@
-﻿//    Copyright(C) 2019 Christopher Ryan Mackay
+﻿//    Copyright(C) 2020 Christopher Ryan Mackay
 
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -43,8 +43,8 @@ namespace ProjectParameters
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.btnInsert = new System.Windows.Forms.Button();
             this.dgvSharedParameters = new System.Windows.Forms.DataGridView();
@@ -79,20 +79,20 @@ namespace ProjectParameters
             this.dgvSharedParameters.AllowUserToOrderColumns = true;
             this.dgvSharedParameters.AllowUserToResizeColumns = false;
             this.dgvSharedParameters.AllowUserToResizeRows = false;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.dgvSharedParameters.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.dgvSharedParameters.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSharedParameters.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.dgvSharedParameters.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSharedParameters.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgvSharedParameters.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSharedParameters.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSharedParameters.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvSharedParameters.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvSharedParameters.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmParamName,
@@ -101,14 +101,14 @@ namespace ProjectParameters
             this.clmCategory,
             this.clmPropertiesGroup});
             this.dgvSharedParameters.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvSharedParameters.Location = new System.Drawing.Point(12, 190);
+            this.dgvSharedParameters.Location = new System.Drawing.Point(12, 206);
             this.dgvSharedParameters.Name = "dgvSharedParameters";
             this.dgvSharedParameters.ReadOnly = true;
             this.dgvSharedParameters.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvSharedParameters.RowHeadersVisible = false;
             this.dgvSharedParameters.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
             this.dgvSharedParameters.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSharedParameters.Size = new System.Drawing.Size(835, 522);
+            this.dgvSharedParameters.Size = new System.Drawing.Size(835, 506);
             this.dgvSharedParameters.TabIndex = 17;
             this.dgvSharedParameters.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvSharedParameters_MouseUp);
             // 
@@ -148,7 +148,7 @@ namespace ProjectParameters
             this.lblSharedParameterFile.AutoSize = true;
             this.lblSharedParameterFile.BackColor = System.Drawing.Color.Transparent;
             this.lblSharedParameterFile.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblSharedParameterFile.Location = new System.Drawing.Point(12, 144);
+            this.lblSharedParameterFile.Location = new System.Drawing.Point(12, 162);
             this.lblSharedParameterFile.Name = "lblSharedParameterFile";
             this.lblSharedParameterFile.Size = new System.Drawing.Size(111, 13);
             this.lblSharedParameterFile.TabIndex = 18;
@@ -160,7 +160,7 @@ namespace ProjectParameters
             this.txtSharedParameterFile.BackColor = System.Drawing.SystemColors.Control;
             this.txtSharedParameterFile.Enabled = false;
             this.txtSharedParameterFile.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtSharedParameterFile.Location = new System.Drawing.Point(12, 162);
+            this.txtSharedParameterFile.Location = new System.Drawing.Point(12, 180);
             this.txtSharedParameterFile.Name = "txtSharedParameterFile";
             this.txtSharedParameterFile.ReadOnly = true;
             this.txtSharedParameterFile.Size = new System.Drawing.Size(754, 20);
@@ -170,7 +170,7 @@ namespace ProjectParameters
             // 
             this.btnLoad.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnLoad.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnLoad.Location = new System.Drawing.Point(772, 161);
+            this.btnLoad.Location = new System.Drawing.Point(772, 179);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(75, 23);
             this.btnLoad.TabIndex = 20;
@@ -186,7 +186,7 @@ namespace ProjectParameters
             this.lblInstructions.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lblInstructions.Location = new System.Drawing.Point(9, 9);
             this.lblInstructions.Name = "lblInstructions";
-            this.lblInstructions.Size = new System.Drawing.Size(534, 104);
+            this.lblInstructions.Size = new System.Drawing.Size(534, 130);
             this.lblInstructions.TabIndex = 18;
             this.lblInstructions.Text = resources.GetString("lblInstructions.Text");
             // 

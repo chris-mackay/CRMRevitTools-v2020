@@ -1,4 +1,4 @@
-﻿//    Copyright(C) 2019 Christopher Ryan Mackay
+﻿//    Copyright(C) 2020 Christopher Ryan Mackay
 
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -21,6 +21,7 @@ using System.Windows.Forms;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using System.Text;
+using System.Runtime.InteropServices;
 
 namespace ProjectParameters
 {
@@ -47,7 +48,7 @@ namespace ProjectParameters
             myRevitUIApp = incomingUIApp;
             myRevitDoc = myRevitUIApp.ActiveUIDocument.Document;
             myCommandData = Class1.m_commandData;
-
+            
             sharedParamFile = OpenSharedParametersFile(myCommandData.Application.Application).Filename.ToString();
             txtSharedParameterFile.Text = sharedParamFile;
 
@@ -139,7 +140,7 @@ namespace ProjectParameters
         #endregion
 
         #region FUNCTIONS
-
+        
         private ContextMenu TableContextMenu()
         {
             ContextMenu mnu = new ContextMenu();
@@ -147,7 +148,7 @@ namespace ProjectParameters
             MenuItem cxmnuEditCategory = new MenuItem("Edit Category");
             MenuItem cxmnuEditPropertiesGroup = new MenuItem("Edit Properties Group");
             MenuItem cxmnuExclude = new MenuItem("Exclude Parameter");
-
+            
             cxmnuEditCategory.Click += new EventHandler(cxmnuEditCategory_Click);
             cxmnuEditBinding.Click += new EventHandler(cxmnuEditBinding_Click);
             cxmnuEditPropertiesGroup.Click += new EventHandler(cxmnuEditPropertiesGroup_Click);
@@ -161,7 +162,7 @@ namespace ProjectParameters
 
             return mnu;
         }
-
+        
         private List<string> ProjectParameterList()
         {
             List<string> projectParameters = new List<string>();
@@ -419,7 +420,7 @@ namespace ProjectParameters
                 {
                     char[] chrSep = new char[] { '\t' };
                     string[] arr = line.Split(chrSeparator, StringSplitOptions.None);
-
+                    
                     string guid = arr[1];
                     string paramName = arr[2];
                     string groupNum = arr[5];
@@ -428,7 +429,7 @@ namespace ProjectParameters
                     string entry = paramName + "\t" + guid + "\t" + groupName + "\t";
 
                     paramList.Add(entry);
-
+                    
                 }
             }
 
@@ -532,9 +533,8 @@ namespace ProjectParameters
             ExternalDefinition extDef = null;
 
             if (myGroup != null)
-            {
                 extDef = myGroup.Definitions.get_Item(name) as ExternalDefinition;
-            }
+            
             return extDef;
         }
 
@@ -610,25 +610,25 @@ namespace ProjectParameters
                 string propertiesGroup = new_frmSelectionBox.cbItems.SelectedItem.ToString();
 
                 foreach (DataGridViewRow row in dgvSharedParameters.SelectedRows)
-                {
                     row.Cells["clmPropertiesGroup"].Value = propertiesGroup;
-                }
             }
-
         }
 
         private void cxmnuExclude_Click(object sender, EventArgs e)
         {
             TaskDialog td = new TaskDialog("Exclude Parameter");
-            td.MainInstruction = "Are you sure you want to exclude the selected parameters from Project Parameters?";
+            td.MainInstruction = "Are you sure you want to exclude the selected parameters from insertion?";
             td.CommonButtons = TaskDialogCommonButtons.Yes | TaskDialogCommonButtons.No;
 
             if (td.Show() == TaskDialogResult.Yes)
             {
+                DrawingControl.SetDoubleBuffered(dgvSharedParameters);
+                DrawingControl.SuspendDrawing(dgvSharedParameters);
+
                 foreach (DataGridViewRow row in dgvSharedParameters.SelectedRows)
-                {
                     dgvSharedParameters.Rows.Remove(row);
-                }
+
+                DrawingControl.ResumeDrawing(dgvSharedParameters);
             }
         }
 
@@ -654,7 +654,7 @@ namespace ProjectParameters
             if (new_frmSelectionBox.ShowDialog() == DialogResult.OK)
             {
                 string binding = new_frmSelectionBox.cbItems.SelectedItem.ToString();
-
+                
                 foreach (DataGridViewRow row in dgvSharedParameters.SelectedRows)
                 {
                     string category = row.Cells["clmCategory"].Value.ToString();
@@ -673,9 +673,7 @@ namespace ProjectParameters
                 if (invalidPairs.Count == 0)
                 {
                     foreach (DataGridViewRow row in dgvSharedParameters.SelectedRows)
-                    {
                         row.Cells["clmBinding"].Value = binding;
-                    }
                 }
                 else
                 {
@@ -714,9 +712,7 @@ namespace ProjectParameters
                 list = TypeCategories();
 
                 foreach (string item in list)
-                {
                     new_frmSelectionBox.cbItems.Items.Add(item);
-                }
             }
             else if (bindingList.All(o => o == bindingList[0]) && bindingList[0] == "Instance")
             {
@@ -724,9 +720,7 @@ namespace ProjectParameters
                 list = InstanceCategories();
 
                 foreach (string item in list)
-                {
                     new_frmSelectionBox.cbItems.Items.Add(item);
-                }
             }
             else if (bindingList.Contains(""))
             {
@@ -755,9 +749,7 @@ namespace ProjectParameters
                 string category = new_frmSelectionBox.cbItems.SelectedItem.ToString();
 
                 foreach (DataGridViewRow row in dgvSharedParameters.SelectedRows)
-                {
                     row.Cells["clmCategory"].Value = category;
-                }
             }
         }
 
@@ -781,22 +773,23 @@ namespace ProjectParameters
                 string paramName = arrValues[0];
                 string paramGroup = arrValues[2];
 
-                dgvSharedParameters.Rows.Add(paramName, paramGroup, "", "", "");
-
+                if (!projectParamList.Contains(paramName))
+                    dgvSharedParameters.Rows.Add(paramName, paramGroup, "", "", "");
             }
+
+            DrawingControl.SetDoubleBuffered(dgvSharedParameters);
+            DrawingControl.SuspendDrawing(dgvSharedParameters);
 
             foreach (DataGridViewRow row in dgvSharedParameters.Rows)
             {
                 string sharedParam = "";
-
                 sharedParam = row.Cells["clmParamName"].Value.ToString();
 
                 if (projectParamList.Contains(sharedParam))
-                {
-                    row.DefaultCellStyle.BackColor = System.Drawing.Color.Red;
-                }
+                    row.DefaultCellStyle.BackColor = System.Drawing.Color.LightGreen;
             }
 
+            DrawingControl.ResumeDrawing(dgvSharedParameters);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -815,5 +808,64 @@ namespace ProjectParameters
         }
 
         #endregion
+
+        public static class DrawingControl
+        {
+            [DllImport("user32.dll")]
+            public static extern int SendMessage(IntPtr _hWnd, Int32 _wMsg, bool _wParam, Int32 _lParam);
+
+            private const int WM_SETREDRAW = 11;
+
+            public static void SetDoubleBuffered(System.Windows.Forms.Control _ctrl)
+            {
+                if (!SystemInformation.TerminalServerSession)
+                {
+                    typeof(System.Windows.Forms.Control).InvokeMember("DoubleBuffered", (System.Reflection.BindingFlags.SetProperty
+                                    | (System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic)), null, _ctrl, new object[] {
+                            true});
+                }
+            }
+
+            public static void SetDoubleBuffered_ListControls(List<System.Windows.Forms.Control> _ctrlList)
+            {
+                if (!SystemInformation.TerminalServerSession)
+                {
+                    foreach (System.Windows.Forms.Control ctrl in _ctrlList)
+                    {
+                        typeof(System.Windows.Forms.Control).InvokeMember("DoubleBuffered", (System.Reflection.BindingFlags.SetProperty
+                                        | (System.Reflection.BindingFlags.Instance | System.Reflection.BindingFlags.NonPublic)), null, ctrl, new object[] {
+                                true});
+                    }
+                }
+            }
+
+            public static void SuspendDrawing(System.Windows.Forms.Control _ctrl)
+            {
+                SendMessage(_ctrl.Handle, WM_SETREDRAW, false, 0);
+            }
+
+            public static void SuspendDrawing_ListControls(List<System.Windows.Forms.Control> _ctrlList)
+            {
+                foreach (System.Windows.Forms.Control ctrl in _ctrlList)
+                {
+                    SendMessage(ctrl.Handle, WM_SETREDRAW, false, 0);
+                }
+            }
+
+            public static void ResumeDrawing(System.Windows.Forms.Control _ctrl)
+            {
+                SendMessage(_ctrl.Handle, WM_SETREDRAW, true, 0);
+                _ctrl.Refresh();
+            }
+
+            public static void ResumeDrawing_ListControls(List<System.Windows.Forms.Control> _ctrlList)
+            {
+                foreach (System.Windows.Forms.Control ctrl in _ctrlList)
+                {
+                    SendMessage(ctrl.Handle, WM_SETREDRAW, true, 0);
+                    ctrl.Refresh();
+                }
+            }
+        }
     }
 }

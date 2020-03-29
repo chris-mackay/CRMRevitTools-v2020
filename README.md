@@ -1,6 +1,6 @@
 # CRMRevitTools-v2020
 
-![Ribbon](CRMRevitTools_Help/ribbon.png?raw=true "Ribbon")
+![Ribbon](Readme_Images/ribbon.png?raw=true "Ribbon")
 
 #### This repository is meant to be a template for creating your own Revit tab menu with custom commands.
 *Cloning this entire repository is required to build the (.exe) installer in the Inno Setup folder*
@@ -38,14 +38,14 @@
 
 # Included Commands
 ## Create Sheets
-![CreateSheets](CRMRevitTools_Help/images/create_revit_sheets/main_form.png?raw=true "CreateSheets")
+![CreateSheets](Readme_Images/create_sheets.png?raw=true "CreateSheets")
 ## Shared Parameter Creator
-![SharedParameterCreator](CRMRevitTools_Help/images/shared_parameter_creator/main_form.png?raw=true "SharedParameterCreator")
+![SharedParameterCreator](Readme_Images/shared_parameter_creator.png?raw=true "SharedParameterCreator")
 ## Create Sheet Set
-![CreateSheetSet](CRMRevitTools_Help/create_sheet_set.png?raw=true "CreateSheetSet")
+![CreateSheetSet](Readme_Images/create_sheet_set.png?raw=true "CreateSheetSet")
 ## Sheet Renamer
-![SheetRenamer](CRMRevitTools_Help/images/sheet_renamer/main_form.png?raw=true "SheetRenamer")
+![SheetRenamer](Readme_Images/sheet_renamer.png?raw=true "SheetRenamer")
 ## Insert into Project Parameters
-![InsertIntoProjectParameters](CRMRevitTools_Help/project_parameters.png?raw=true "InsertIntoProjectParameters")
+![InsertIntoProjectParameters](Readme_Images/insert_parameters.png?raw=true "InsertIntoProjectParameters")
 ## Revision On Sheets
-![RevisionOnSheets](CRMRevitTools_Help/revision_on_sheets.png?raw=true "RevisionOnSheets")
+![RevisionOnSheets](Readme_Images/revision_on_sheets.png?raw=true "RevisionOnSheets")

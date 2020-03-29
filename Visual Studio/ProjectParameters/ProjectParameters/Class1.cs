@@ -1,4 +1,4 @@
-﻿//    Copyright(C) 2019 Christopher Ryan Mackay
+﻿//    Copyright(C) 2020 Christopher Ryan Mackay
 
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -47,7 +47,7 @@ namespace ProjectParameters
                 MainForm myMainForm = new MainForm(uiApp); //CREATES A NEW MAINFORM AND PASSED THE REVIT APP TO ACCESS ELEMENTS
                 myMainForm.ShowDialog();
             }
-
+            
             return Result.Succeeded;
         }
 

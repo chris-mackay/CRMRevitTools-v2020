@@ -1,4 +1,4 @@
-﻿//    Copyright(C) 2020  Christopher Ryan Mackay
+﻿//    Copyright(C) 2020 Christopher Ryan Mackay
 
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -179,7 +179,7 @@ namespace RevisionOnSheets
             this.label2.Location = new System.Drawing.Point(12, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(486, 65);
-            this.label2.TabIndex = 6;
+            this.label2.TabIndex = 0;
             this.label2.Text = resources.GetString("label2.Text");
             // 
             // MainForm

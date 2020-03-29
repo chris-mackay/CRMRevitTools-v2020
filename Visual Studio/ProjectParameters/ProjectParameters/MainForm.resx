@@ -120,12 +120,13 @@
   <data name="lblInstructions.Text" xml:space="preserve">
     <value>Instructions:
 
-1) Make sure a Shared Parameter file is loaded in Manage-&gt;Shared Parameters
-2) Click Load to fill the view with the Shared Parameters from the file
+1) Make sure a Shared Parameter file is loaded in Manage-&gt;Shared Parameters.
+2) Click Load to fill the view with the Shared Parameters from the file.
 3) Right click to set the Binding type (e.g. Instance or Type). This value must be set before selecting a Category.
 4) Right click to set the element Category (e.g. Mechanical Equipment, Walls, etc.) 
 5) Right click to set the Properties Group. This is the category it will be grouped under in the Properties window.
-6) Click Insert to insert the Shared Parameters into Project Parameters
-</value>
+6) Click Insert to insert the Shared Parameters into Project Parameters.
+
+NOTE: Parameters that are already inserted into the project will not be loaded from the file.</value>
   </data>
 </root>

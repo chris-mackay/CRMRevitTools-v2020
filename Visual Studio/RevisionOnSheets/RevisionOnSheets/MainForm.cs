@@ -1,4 +1,4 @@
-﻿//    Copyright(C) 2020  Christopher Ryan Mackay
+﻿//    Copyright(C) 2020 Christopher Ryan Mackay
 
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -154,9 +154,15 @@ namespace RevisionOnSheets
                 foreach (ViewSheet viewSheet in viewSheets_ENTIRE_PROJECT)
                     if (row.Cells["SheetNumber"].Value.ToString() == viewSheet.SheetNumber)
                         if (RevisionIsOnSheet(viewSheet, sequence))
+                        {
                             row.Cells["Set"].Value = true;
+                            row.DefaultCellStyle.BackColor = System.Drawing.Color.LightGreen;
+                        }
                         else
+                        {
                             row.Cells["Set"].Value = false;
+                            row.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+                        }
         }
 
         private void LoadSheets(DataGridView dataGridView)
@@ -307,6 +313,38 @@ namespace RevisionOnSheets
         {
             if (e.KeyData == (Keys.ShiftKey | Keys.Shift))
                 shiftKeyIsDown = true;
+
+            if (dgvSheets.SelectedRows.Count == 1)
+            {
+                if (e.KeyData == (Keys.Space))
+                {
+                    DataGridViewSelectedRowCollection rows = dgvSheets.SelectedRows;
+                
+                    foreach (DataGridViewRow row in rows)
+                    {
+                        bool set = bool.Parse(row.Cells["Set"].Value.ToString());
+                        row.Cells["Set"].Value = !set;
+
+                        if (bool.Parse(row.Cells["Set"].Value.ToString()) == true)
+                            row.DefaultCellStyle.BackColor = System.Drawing.Color.LightGreen;
+                        else
+                            row.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+                    }
+                }
+            }
+        }
+
+        private void ColorRows()
+        {
+            foreach (DataGridViewRow row in dgvSheets.Rows)
+            {
+                bool set = bool.Parse(row.Cells["Set"].Value.ToString());
+
+                if (set)
+                    row.DefaultCellStyle.BackColor = System.Drawing.Color.LightGreen;
+                else
+                    row.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            }
         }
 
         private void dgvSheets_KeyUp(object sender, KeyEventArgs e)
@@ -317,7 +355,10 @@ namespace RevisionOnSheets
 
         private void dgvSheets_MouseClick(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left && shiftKeyIsDown
+            DrawingControl.SetDoubleBuffered(dgvSheets);
+            DrawingControl.SuspendDrawing(dgvSheets);
+
+            if (e.Button == MouseButtons.Left && shiftKeyIsDown 
                 && dgvSheets.CurrentCell is DataGridViewCheckBoxCell)
             {
                 foreach (DataGridViewColumn col in dgvSheets.Columns)
@@ -326,9 +367,17 @@ namespace RevisionOnSheets
                             if (row.Selected)
                             {
                                 bool set = bool.Parse(dgvSheets[col.Index, row.Index].Value.ToString());
-                                dgvSheets[col.Index, row.Index].Value = !set;
+                                row.Cells["Set"].Value = !set;
+
+                                if (bool.Parse(row.Cells["Set"].Value.ToString()))
+                                    row.DefaultCellStyle.BackColor = System.Drawing.Color.LightGreen;
+                                else
+                                    row.DefaultCellStyle.BackColor = System.Drawing.Color.White;
                             }
             }
+
+            ColorRows();
+            DrawingControl.ResumeDrawing(dgvSheets);
         }
     }
 }
