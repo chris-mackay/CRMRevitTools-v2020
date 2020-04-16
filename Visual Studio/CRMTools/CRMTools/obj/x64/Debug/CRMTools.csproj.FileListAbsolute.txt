@@ -1,5 +1,4 @@
 C:\Programming\CRMRevitTools-v2020\Visual Studio\CRMTools\CRMTools\bin\x64\Debug\CRMTools.dll
 C:\Programming\CRMRevitTools-v2020\Visual Studio\CRMTools\CRMTools\bin\x64\Debug\CRMTools.pdb
-C:\Programming\CRMRevitTools-v2020\Visual Studio\CRMTools\CRMTools\obj\x64\Debug\CRMTools.csprojAssemblyReference.cache
 C:\Programming\CRMRevitTools-v2020\Visual Studio\CRMTools\CRMTools\obj\x64\Debug\CRMTools.dll
 C:\Programming\CRMRevitTools-v2020\Visual Studio\CRMTools\CRMTools\obj\x64\Debug\CRMTools.pdb
