@@ -7,14 +7,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CreateSheetSet", "CreateShe
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Debug|Any CPU = Debug|Any CPU
-		Release|Any CPU = Release|Any CPU
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{EF6E2C4E-6105-4C69-93C1-154FFAF12353}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EF6E2C4E-6105-4C69-93C1-154FFAF12353}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EF6E2C4E-6105-4C69-93C1-154FFAF12353}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EF6E2C4E-6105-4C69-93C1-154FFAF12353}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF6E2C4E-6105-4C69-93C1-154FFAF12353}.Debug|x64.ActiveCfg = Debug|x64
+		{EF6E2C4E-6105-4C69-93C1-154FFAF12353}.Debug|x64.Build.0 = Debug|x64
+		{EF6E2C4E-6105-4C69-93C1-154FFAF12353}.Release|x64.ActiveCfg = Release|x64
+		{EF6E2C4E-6105-4C69-93C1-154FFAF12353}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

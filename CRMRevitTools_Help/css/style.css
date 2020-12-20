@@ -54,7 +54,7 @@ a.large:active {font: 30px 'Lato', sans-serif; font-weight: bold; color: #145B9B
 hr {border: none; height: 1px; color: #333; /* old IE */ background-color: #333; /* Modern Browsers */}
 
 /* #footer {font: 17px 'Lato', sans-serif; font-weight: 300; background-color: #c8d3d9; color:black; clear:both; text-align:center; vertical-align: middle; height: 50px; line-height: 50px;} */
-#footer {font: 17px 'Lato', sans-serif; font-weight: 300; text-align: right; line-height: 40px; vertical-align: middle; width: 1000px; height: 40px; display: inline-block; padding-right: 10px; padding-left: 10px; border-style: solid; border-color: darkgray;}
+#footer {font: 17px 'Lato', sans-serif; font-weight: 300; text-align: right; line-height: 40px; vertical-align: middle; width: 1000px; height: 40px; display: inline-block; padding-right: 10px; padding-left: 10px;}
 #content {width: 1000px; margin: 0 auto; margin-left: auto ; margin-right: auto ; margin-top: 20px;}
 #center_img {margin-left: auto; margin-right: auto; display: block; margin-top: 20px; margin-bottom: 20px;}
 #center_text {text-align: center; padding-top: 10px; padding-bottom: 10px;}

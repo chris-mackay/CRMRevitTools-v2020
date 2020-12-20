@@ -397,9 +397,8 @@ namespace SharedParameterCreator
             }
         }
 
-        private void MainForm_HelpButtonClicked(object sender, System.ComponentModel.CancelEventArgs e)
+        private void btnHelp_Click(object sender, EventArgs e)
         {
-
             string helpFile = string.Empty;
             helpFile = @"C:\Users\" + Environment.UserName + @"\Documents\CRMRevitTools\" + REVIT_VERSION + @"\CRMRevitTools_Help\shared_parameter_creator.html";
 
@@ -415,7 +414,6 @@ namespace SharedParameterCreator
                 taskDialog.MainInstruction = "The Help file for Shared Parameter Creator could not be found. It may have been moved or deleted.";
                 taskDialog.Show();
             }
-
         }
     }
 }

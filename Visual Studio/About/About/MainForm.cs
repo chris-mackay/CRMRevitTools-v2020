@@ -14,24 +14,15 @@
 //    along with this program.If not, see<https://www.gnu.org/licenses/>.
 
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
-using Microsoft.Win32;
 using System.Diagnostics;
 
 namespace About
 {
     public partial class MainForm : System.Windows.Forms.Form
     {
-        private string version = "v1.0.4";
+        private string version = "v1.0.5";
 
         public MainForm()
         {

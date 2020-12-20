@@ -20,6 +20,8 @@ using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
+using System.ComponentModel;
 
 namespace SheetRenamer
 {
@@ -237,9 +239,8 @@ namespace SheetRenamer
             this.Close();
         }
 
-        private void MainForm_HelpButtonClicked(object sender, System.ComponentModel.CancelEventArgs e)
+        private void btnHelp_Click(object sender, EventArgs e)
         {
-
             string helpFile = string.Empty;
             helpFile = @"C:\Users\" + Environment.UserName + @"\Documents\CRMRevitTools\" + REVIT_VERSION + @"\CRMRevitTools_Help\sheet_renamer.html";
 
@@ -255,7 +256,19 @@ namespace SheetRenamer
                 taskDialog.MainInstruction = "The Help file for Sheet Renamer could not be found. It may have been moved or deleted.";
                 taskDialog.Show();
             }
+        }
 
+        private void pictureBox1_Paint(object sender, PaintEventArgs e)
+        {
+            using (Font myFont = new Font("Segoe UI", 12))
+            {
+                var brush = new SolidBrush(System.Drawing.Color.FromArgb(0, 51, 188));
+
+                e.Graphics.DrawString("Specify the directory where the PDF files have been printed.\n" +
+                                      "Select the Sheet Set that was used to print the PDF files.\n\n" + 
+                                      "Click OK to rename the PDF files. Make sure none of the\n" +
+                                      "files are open before renaming.", myFont, brush, new System.Drawing.Point(0, 0));
+            }
         }
     }
 }

@@ -131,27 +131,27 @@ namespace CRMTools
 
             #endregion
 
-            #region ProjectParameters
+            #region InsertParameters
 
-            PushButtonData btnProjectParameters = new PushButtonData("cmdProjectParameters", "Insert into \nProject Parameters", commandsPath + "ProjectParameters.dll", "ProjectParameters.Class1");
-            btnProjectParameters.ToolTip = "Insert Shared Parameters into Project Parameters";
-            btnProjectParameters.LongDescription = "1) Make sure a Shared Parameter file is loaded in Manage->Shared Parameters\n" +
-                                                   "2) Click Load to fill the view with the Shared Parameters from the file\n" +
-                                                   "3) Right click to set the Binding type (e.g. Instance or Type). This value must be set before selecting a Category.\n" +
-                                                   "4) Right click to set the element Category (e.g. Mechanical Equipment, Walls, etc.)\n" + 
-                                                   "5) Right click to set the Properties Group. This is the category it will be grouped under in the Properties window.\n" +
-                                                   "6) Click Insert to insert the Shared Parameters into Project Parameters";
-
-            // create bitmap image for button
-            Uri uriLargeImage_ProjectParameters = new Uri(iconsPath + @"32x32\cmdProjectParameters_32x32.bmp");
-            BitmapImage largeImage_ProjectParameters = new BitmapImage(uriLargeImage_ProjectParameters);
+            PushButtonData btnInsertParameters = new PushButtonData("cmdInsertParameters", "Insert \nParameters", commandsPath + "InsertParameters.dll", "InsertParameters.Class1");
+            btnInsertParameters.ToolTip = "Insert Shared Parameters into Project Parameters or Family Parameters";
+            btnInsertParameters.LongDescription = "1) Make sure a Shared Parameter file is loaded in Manage->Shared Parameters\n" +
+                                                  "2) Click Load to fill the view with the Shared Parameters from the file\n" +
+                                                  "3) Right click to set the Binding type (e.g. Instance or Type). This value must be set before selecting a Category.\n" +
+                                                  "4) Right click to set the element Category (e.g. Mechanical Equipment, Walls, etc.)\n" + 
+                                                  "5) Right click to set the Properties Group. This is the category it will be grouped under in the Properties window.\n" +
+                                                  "6) Click Insert to insert the Shared Parameters into Project Parameters or Family Parameters";
 
             // create bitmap image for button
-            Uri uriSmallImage_ProjectParameters = new Uri(iconsPath + @"16x16\cmdProjectParameters_16x16.bmp");
-            BitmapImage smallImage_ProjectParameters = new BitmapImage(uriSmallImage_ProjectParameters);
+            Uri uriLargeImage_InsertParameters = new Uri(iconsPath + @"32x32\cmdInsertParameters_32x32.bmp");
+            BitmapImage largeImage_InsertParameters = new BitmapImage(uriLargeImage_InsertParameters);
 
-            btnProjectParameters.LargeImage = largeImage_ProjectParameters;
-            btnProjectParameters.Image = smallImage_ProjectParameters;
+            // create bitmap image for button
+            Uri uriSmallImage_InsertParameters = new Uri(iconsPath + @"16x16\cmdInsertParameters_16x16.bmp");
+            BitmapImage smallImage_InsertParameters = new BitmapImage(uriSmallImage_InsertParameters);
+
+            btnInsertParameters.LargeImage = largeImage_InsertParameters;
+            btnInsertParameters.Image = smallImage_InsertParameters;
 
             #endregion
 
@@ -205,7 +205,7 @@ namespace CRMTools
             productionButtons.Add(pnlProductionPanel.AddItem(btnSharedParameterCreator));
             productionButtons.Add(pnlProductionPanel.AddItem(btnCreateSheetSet));
             productionButtons.Add(pnlProductionPanel.AddItem(btnSheetRenamer));
-            productionButtons.Add(pnlProductionPanel.AddItem(btnProjectParameters));
+            productionButtons.Add(pnlProductionPanel.AddItem(btnInsertParameters));
             productionButtons.Add(pnlProductionPanel.AddItem(btnRevisionOnSheets));
 
             #endregion

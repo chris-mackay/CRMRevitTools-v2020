@@ -55,6 +55,7 @@ namespace SharedParameterCreator
             this.lblNotice = new System.Windows.Forms.Label();
             this.btnOpenTemplate = new System.Windows.Forms.Button();
             this.lblInstructions = new System.Windows.Forms.Label();
+            this.btnHelp = new System.Windows.Forms.Button();
             this.gbSelectFile.SuspendLayout();
             this.gbCreateSharedParameters.SuspendLayout();
             this.SuspendLayout();
@@ -116,7 +117,7 @@ namespace SharedParameterCreator
             // chkInsert
             // 
             this.chkInsert.AutoSize = true;
-            this.chkInsert.Location = new System.Drawing.Point(12, 259);
+            this.chkInsert.Location = new System.Drawing.Point(228, 259);
             this.chkInsert.Name = "chkInsert";
             this.chkInsert.Size = new System.Drawing.Size(164, 17);
             this.chkInsert.TabIndex = 2;
@@ -175,25 +176,34 @@ namespace SharedParameterCreator
             this.lblInstructions.TabIndex = 0;
             this.lblInstructions.Text = resources.GetString("lblInstructions.Text");
             // 
+            // btnHelp
+            // 
+            this.btnHelp.Location = new System.Drawing.Point(12, 253);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(75, 23);
+            this.btnHelp.TabIndex = 5;
+            this.btnHelp.Text = "Help";
+            this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(578, 288);
+            this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.gbCreateSharedParameters);
             this.Controls.Add(this.gbSelectFile);
             this.Controls.Add(this.chkInsert);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnCancel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Shared Parameter Creator";
-            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.MainForm_HelpButtonClicked);
             this.gbSelectFile.ResumeLayout(false);
             this.gbSelectFile.PerformLayout();
             this.gbCreateSharedParameters.ResumeLayout(false);
@@ -215,5 +225,6 @@ namespace SharedParameterCreator
         private System.Windows.Forms.Button btnOpenTemplate;
         private System.Windows.Forms.Label lblInstructions;
         private System.Windows.Forms.Label lblNotice;
+        private System.Windows.Forms.Button btnHelp;
     }
 }

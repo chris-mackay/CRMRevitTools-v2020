@@ -1,4 +1,4 @@
-﻿//    Copyright(C) 2020 Christopher Ryan Mackay
+﻿//    Copyright(C) 2019-2020 Christopher Ryan Mackay
 
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -65,8 +65,14 @@ namespace CreateRevitSheets
             this.btnRemoveSheet = new System.Windows.Forms.Button();
             this.cbViewTypes = new System.Windows.Forms.ComboBox();
             this.btnAddSheet = new System.Windows.Forms.Button();
+            this.btnHelp = new System.Windows.Forms.Button();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSheetToCreate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbTitleblocks
@@ -76,7 +82,7 @@ namespace CreateRevitSheets
             this.cbTitleblocks.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTitleblocks.ForeColor = System.Drawing.SystemColors.ControlText;
             this.cbTitleblocks.FormattingEnabled = true;
-            this.cbTitleblocks.Location = new System.Drawing.Point(9, 75);
+            this.cbTitleblocks.Location = new System.Drawing.Point(9, 76);
             this.cbTitleblocks.Name = "cbTitleblocks";
             this.cbTitleblocks.Size = new System.Drawing.Size(558, 21);
             this.cbTitleblocks.TabIndex = 4;
@@ -88,7 +94,7 @@ namespace CreateRevitSheets
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtFilename.Enabled = false;
             this.txtFilename.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.txtFilename.Location = new System.Drawing.Point(9, 30);
+            this.txtFilename.Location = new System.Drawing.Point(9, 31);
             this.txtFilename.Name = "txtFilename";
             this.txtFilename.ReadOnly = true;
             this.txtFilename.Size = new System.Drawing.Size(558, 20);
@@ -124,7 +130,7 @@ namespace CreateRevitSheets
             // 
             this.btnBrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBrowse.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnBrowse.Location = new System.Drawing.Point(573, 29);
+            this.btnBrowse.Location = new System.Drawing.Point(573, 30);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(75, 23);
             this.btnBrowse.TabIndex = 2;
@@ -137,7 +143,7 @@ namespace CreateRevitSheets
             this.lblSheetList.AutoSize = true;
             this.lblSheetList.BackColor = System.Drawing.Color.Transparent;
             this.lblSheetList.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblSheetList.Location = new System.Drawing.Point(9, 12);
+            this.lblSheetList.Location = new System.Drawing.Point(9, 13);
             this.lblSheetList.Name = "lblSheetList";
             this.lblSheetList.Size = new System.Drawing.Size(114, 13);
             this.lblSheetList.TabIndex = 0;
@@ -148,7 +154,7 @@ namespace CreateRevitSheets
             this.lblTitleblocks.AutoSize = true;
             this.lblTitleblocks.BackColor = System.Drawing.Color.Transparent;
             this.lblTitleblocks.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblTitleblocks.Location = new System.Drawing.Point(9, 57);
+            this.lblTitleblocks.Location = new System.Drawing.Point(9, 58);
             this.lblTitleblocks.Name = "lblTitleblocks";
             this.lblTitleblocks.Size = new System.Drawing.Size(91, 13);
             this.lblTitleblocks.TabIndex = 3;
@@ -158,7 +164,7 @@ namespace CreateRevitSheets
             // 
             this.btnLoad.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnLoad.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnLoad.Location = new System.Drawing.Point(573, 74);
+            this.btnLoad.Location = new System.Drawing.Point(573, 75);
             this.btnLoad.Name = "btnLoad";
             this.btnLoad.Size = new System.Drawing.Size(75, 23);
             this.btnLoad.TabIndex = 5;
@@ -173,10 +179,10 @@ namespace CreateRevitSheets
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lstAvailableViews.FormattingEnabled = true;
             this.lstAvailableViews.HorizontalScrollbar = true;
-            this.lstAvailableViews.Location = new System.Drawing.Point(9, 135);
+            this.lstAvailableViews.Location = new System.Drawing.Point(3, 25);
             this.lstAvailableViews.Name = "lstAvailableViews";
             this.lstAvailableViews.ScrollAlwaysVisible = true;
-            this.lstAvailableViews.Size = new System.Drawing.Size(166, 264);
+            this.lstAvailableViews.Size = new System.Drawing.Size(170, 264);
             this.lstAvailableViews.TabIndex = 7;
             // 
             // lblViews
@@ -184,7 +190,7 @@ namespace CreateRevitSheets
             this.lblViews.AutoSize = true;
             this.lblViews.BackColor = System.Drawing.Color.Transparent;
             this.lblViews.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblViews.Location = new System.Drawing.Point(9, 114);
+            this.lblViews.Location = new System.Drawing.Point(3, 7);
             this.lblViews.Name = "lblViews";
             this.lblViews.Size = new System.Drawing.Size(81, 13);
             this.lblViews.TabIndex = 6;
@@ -192,8 +198,7 @@ namespace CreateRevitSheets
             // 
             // btnAddView
             // 
-            this.btnAddView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddView.Location = new System.Drawing.Point(182, 246);
+            this.btnAddView.Location = new System.Drawing.Point(16, 161);
             this.btnAddView.Name = "btnAddView";
             this.btnAddView.Size = new System.Drawing.Size(123, 23);
             this.btnAddView.TabIndex = 12;
@@ -203,8 +208,7 @@ namespace CreateRevitSheets
             // 
             // btnRemoveView
             // 
-            this.btnRemoveView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRemoveView.Location = new System.Drawing.Point(182, 275);
+            this.btnRemoveView.Location = new System.Drawing.Point(16, 190);
             this.btnRemoveView.Name = "btnRemoveView";
             this.btnRemoveView.Size = new System.Drawing.Size(123, 23);
             this.btnRemoveView.TabIndex = 13;
@@ -219,21 +223,13 @@ namespace CreateRevitSheets
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.dgvSheetToCreate);
-            this.panel1.Controls.Add(this.btnEditSheet);
-            this.panel1.Controls.Add(this.btnRemoveSheet);
-            this.panel1.Controls.Add(this.cbViewTypes);
-            this.panel1.Controls.Add(this.btnAddSheet);
+            this.panel1.Controls.Add(this.splitContainer1);
             this.panel1.Controls.Add(this.btnLoad);
-            this.panel1.Controls.Add(this.btnRemoveView);
             this.panel1.Controls.Add(this.lblTitleblocks);
             this.panel1.Controls.Add(this.lblSheetList);
-            this.panel1.Controls.Add(this.btnAddView);
             this.panel1.Controls.Add(this.btnBrowse);
-            this.panel1.Controls.Add(this.lstAvailableViews);
             this.panel1.Controls.Add(this.txtFilename);
             this.panel1.Controls.Add(this.cbTitleblocks);
-            this.panel1.Controls.Add(this.lblViews);
             this.panel1.Location = new System.Drawing.Point(13, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(659, 440);
@@ -247,7 +243,8 @@ namespace CreateRevitSheets
             this.dgvSheetToCreate.AllowUserToResizeRows = false;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
             this.dgvSheetToCreate.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvSheetToCreate.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dgvSheetToCreate.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSheetToCreate.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSheetToCreate.BackgroundColor = System.Drawing.SystemColors.Window;
@@ -265,7 +262,7 @@ namespace CreateRevitSheets
             this.Sheet,
             this.View});
             this.dgvSheetToCreate.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvSheetToCreate.Location = new System.Drawing.Point(313, 114);
+            this.dgvSheetToCreate.Location = new System.Drawing.Point(155, 3);
             this.dgvSheetToCreate.MultiSelect = false;
             this.dgvSheetToCreate.Name = "dgvSheetToCreate";
             this.dgvSheetToCreate.ReadOnly = true;
@@ -273,7 +270,7 @@ namespace CreateRevitSheets
             this.dgvSheetToCreate.RowHeadersVisible = false;
             this.dgvSheetToCreate.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.SystemColors.MenuHighlight;
             this.dgvSheetToCreate.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSheetToCreate.Size = new System.Drawing.Size(335, 314);
+            this.dgvSheetToCreate.Size = new System.Drawing.Size(297, 315);
             this.dgvSheetToCreate.TabIndex = 16;
             this.dgvSheetToCreate.MouseUp += new System.Windows.Forms.MouseEventHandler(this.dgvSheetToCreate_MouseUp);
             // 
@@ -291,8 +288,7 @@ namespace CreateRevitSheets
             // 
             // btnEditSheet
             // 
-            this.btnEditSheet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEditSheet.Location = new System.Drawing.Point(182, 164);
+            this.btnEditSheet.Location = new System.Drawing.Point(16, 79);
             this.btnEditSheet.Name = "btnEditSheet";
             this.btnEditSheet.Size = new System.Drawing.Size(123, 23);
             this.btnEditSheet.TabIndex = 10;
@@ -302,8 +298,7 @@ namespace CreateRevitSheets
             // 
             // btnRemoveSheet
             // 
-            this.btnRemoveSheet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRemoveSheet.Location = new System.Drawing.Point(182, 193);
+            this.btnRemoveSheet.Location = new System.Drawing.Point(16, 108);
             this.btnRemoveSheet.Name = "btnRemoveSheet";
             this.btnRemoveSheet.Size = new System.Drawing.Size(123, 23);
             this.btnRemoveSheet.TabIndex = 11;
@@ -324,22 +319,59 @@ namespace CreateRevitSheets
             "Legends",
             "Sections",
             "Elevations"});
-            this.cbViewTypes.Location = new System.Drawing.Point(9, 407);
+            this.cbViewTypes.Location = new System.Drawing.Point(2, 297);
             this.cbViewTypes.Name = "cbViewTypes";
-            this.cbViewTypes.Size = new System.Drawing.Size(166, 21);
+            this.cbViewTypes.Size = new System.Drawing.Size(171, 21);
             this.cbViewTypes.TabIndex = 8;
             this.cbViewTypes.SelectedIndexChanged += new System.EventHandler(this.cbViews_SelectedIndexChanged);
             // 
             // btnAddSheet
             // 
-            this.btnAddSheet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAddSheet.Location = new System.Drawing.Point(182, 135);
+            this.btnAddSheet.Location = new System.Drawing.Point(16, 50);
             this.btnAddSheet.Name = "btnAddSheet";
             this.btnAddSheet.Size = new System.Drawing.Size(123, 23);
             this.btnAddSheet.TabIndex = 9;
             this.btnAddSheet.Text = "Add Sheet";
             this.btnAddSheet.UseVisualStyleBackColor = true;
             this.btnAddSheet.Click += new System.EventHandler(this.btnAddSheet_Click);
+            // 
+            // btnHelp
+            // 
+            this.btnHelp.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnHelp.Location = new System.Drawing.Point(13, 464);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(75, 23);
+            this.btnHelp.TabIndex = 3;
+            this.btnHelp.Text = "Help";
+            this.btnHelp.UseVisualStyleBackColor = true;
+            this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.splitContainer1.Location = new System.Drawing.Point(9, 103);
+            this.splitContainer1.Name = "splitContainer1";
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.lstAvailableViews);
+            this.splitContainer1.Panel1.Controls.Add(this.lblViews);
+            this.splitContainer1.Panel1.Controls.Add(this.cbViewTypes);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.dgvSheetToCreate);
+            this.splitContainer1.Panel2.Controls.Add(this.btnAddView);
+            this.splitContainer1.Panel2.Controls.Add(this.btnEditSheet);
+            this.splitContainer1.Panel2.Controls.Add(this.btnRemoveView);
+            this.splitContainer1.Panel2.Controls.Add(this.btnRemoveSheet);
+            this.splitContainer1.Panel2.Controls.Add(this.btnAddSheet);
+            this.splitContainer1.Size = new System.Drawing.Size(639, 323);
+            this.splitContainer1.SplitterDistance = 178;
+            this.splitContainer1.TabIndex = 18;
             // 
             // MainForm
             // 
@@ -349,10 +381,10 @@ namespace CreateRevitSheets
             this.BackColor = System.Drawing.SystemColors.Control;
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(684, 499);
+            this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnCreate);
-            this.HelpButton = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(700, 538);
@@ -361,11 +393,15 @@ namespace CreateRevitSheets
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Create Sheets";
-            this.HelpButtonClicked += new System.ComponentModel.CancelEventHandler(this.MainForm_HelpButtonClicked);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSheetToCreate)).EndInit();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -392,5 +428,7 @@ namespace CreateRevitSheets
         private System.Windows.Forms.DataGridView dgvSheetToCreate;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sheet;
         private System.Windows.Forms.DataGridViewTextBoxColumn View;
+        private System.Windows.Forms.Button btnHelp;
+        private System.Windows.Forms.SplitContainer splitContainer1;
     }
 }

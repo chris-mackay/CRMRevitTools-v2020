@@ -55,6 +55,7 @@ namespace RevisionOnSheets
             this.btnOK = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnAppy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSheets)).BeginInit();
             this.SuspendLayout();
             // 
@@ -146,7 +147,7 @@ namespace RevisionOnSheets
             this.btnCancel.Location = new System.Drawing.Point(511, 587);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 5;
+            this.btnCancel.TabIndex = 6;
             this.btnCancel.TabStop = false;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -158,7 +159,7 @@ namespace RevisionOnSheets
             this.btnOK.Location = new System.Drawing.Point(430, 587);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
-            this.btnOK.TabIndex = 4;
+            this.btnOK.TabIndex = 5;
             this.btnOK.TabStop = false;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -182,12 +183,24 @@ namespace RevisionOnSheets
             this.label2.TabIndex = 0;
             this.label2.Text = resources.GetString("label2.Text");
             // 
+            // btnAppy
+            // 
+            this.btnAppy.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAppy.Location = new System.Drawing.Point(349, 587);
+            this.btnAppy.Name = "btnAppy";
+            this.btnAppy.Size = new System.Drawing.Size(75, 23);
+            this.btnAppy.TabIndex = 4;
+            this.btnAppy.Text = "Apply";
+            this.btnAppy.UseVisualStyleBackColor = true;
+            this.btnAppy.Click += new System.EventHandler(this.btnAppy_Click);
+            // 
             // MainForm
             // 
             this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(598, 622);
+            this.Controls.Add(this.btnAppy);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnOK);
@@ -196,7 +209,7 @@ namespace RevisionOnSheets
             this.Controls.Add(this.dgvSheets);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(614, 661);
+            this.MinimumSize = new System.Drawing.Size(614, 391);
             this.Name = "MainForm";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
@@ -218,5 +231,6 @@ namespace RevisionOnSheets
         private System.Windows.Forms.DataGridViewTextBoxColumn SheetName;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Set;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnAppy;
     }
 }

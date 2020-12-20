@@ -1,4 +1,4 @@
-﻿//    Copyright(C) 2020 Christopher Ryan Mackay
+﻿//    Copyright(C) 2019-2020 Christopher Ryan Mackay
 
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -539,7 +539,7 @@ namespace CreateRevitSheets
             RemoveView();
         }
 
-        private void MainForm_HelpButtonClicked(object sender, System.ComponentModel.CancelEventArgs e)
+        private void btnHelp_Click(object sender, EventArgs e)
         {
             string helpFile = string.Empty;
             helpFile = @"C:\Users\" + Environment.UserName + @"\Documents\CRMRevitTools\" + REVIT_VERSION + @"\CRMRevitTools_Help\create_revit_sheets.html";
@@ -556,12 +556,10 @@ namespace CreateRevitSheets
                 taskDialog.MainInstruction = "The Help file for Create Sheets could not be found. It may have been moved or deleted.";
                 taskDialog.Show();
             }
-
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-
             try
             {
                 LoadTitleblock();
@@ -571,7 +569,6 @@ namespace CreateRevitSheets
 
                 TaskDialog.Show("Error", ex.Message + "\n\n" + ex.Source);
             }
-
         }
 
         #endregion
@@ -969,5 +966,6 @@ namespace CreateRevitSheets
         }
 
         #endregion
+            
     }
 }
