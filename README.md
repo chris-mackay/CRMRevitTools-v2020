@@ -38,14 +38,14 @@
 
 # Included Commands
 ## Create Sheets
-![CreateSheets](Readme_Images/create_sheets.png?raw=true "CreateSheets")
+![CreateSheets](Readme_Images/create_sheets.gif?raw=true "CreateSheets")
 ## Shared Parameter Creator
 ![SharedParameterCreator](Readme_Images/shared_parameter_creator.png?raw=true "SharedParameterCreator")
 ## Create Sheet Set
-![CreateSheetSet](Readme_Images/create_sheet_set.png?raw=true "CreateSheetSet")
+![CreateSheetSet](Readme_Images/create_sheet_set.gif?raw=true "CreateSheetSet")
 ## Sheet Renamer
-![SheetRenamer](Readme_Images/sheet_renamer.png?raw=true "SheetRenamer")
-## Insert into Project Parameters
-![InsertIntoProjectParameters](Readme_Images/insert_parameters.png?raw=true "InsertIntoProjectParameters")
+![SheetRenamer](Readme_Images/sheet_renamer.gif?raw=true "SheetRenamer")
+## Insert Parameters
+![InsertParameters](Readme_Images/insert_parameters.gif?raw=true "InsertParameters")
 ## Revision On Sheets
-![RevisionOnSheets](Readme_Images/revision_on_sheets.png?raw=true "RevisionOnSheets")
+![RevisionOnSheets](Readme_Images/revision_on_sheets.gif?raw=true "RevisionOnSheets")
