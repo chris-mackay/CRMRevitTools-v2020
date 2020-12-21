@@ -7,7 +7,7 @@
 ### See folder content descriptions below
 
 ### CRMRevitTools_Help
-* Contains a folder structure for creating `.html` instruction pages that simply open in a browser. These instruction pages are opened using the Help (?) button in the Titlebar of the running command.
+* Contains a folder structure for creating `.html` instruction pages that simply open in a browser. These instruction pages are opened using the Help button where applicable.
   * *css*: Cascading Style Sheet for `.html` files
   *  *images*: Contains all images for `.html` files
 
