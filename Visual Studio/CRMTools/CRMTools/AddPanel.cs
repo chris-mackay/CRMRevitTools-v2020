@@ -175,6 +175,32 @@ namespace CRMTools
 
             #endregion
 
+            #region PurgeParameters
+
+            // Create a push button
+            PushButtonData btnPurgeParameters = new PushButtonData("cmdPurgeParameters", "Purge \nParameters", commandsPath + "PurgeParameters.dll", "PurgeParameters.Class1");
+            btnPurgeParameters.ToolTip = "Completely delete Shared Parameters from the active Revit Document.";
+            btnPurgeParameters.LongDescription = "Select the BuiltInCategory from the dropdown list to load it's associated " +
+                                                 "Shared Parameters. Tick the checkbox next to the Shared Parameters that you " +
+                                                 "want to purge. NOTE: At least one family of the selected BuiltInCategory must " +
+                                                 "be loaded into the project to load it's associated parameters.\n\n" +
+                                                 "Purging a Shared Parameter will physically remove it from the Revit Project, " +
+                                                 "Tags, Schedules, and Families. To use this parameter again it will need to be " +
+                                                 "re-inserted in the Project and any Tags, Schedules, and Families.";
+
+            // create bitmap image for button
+            Uri uriLargeImage_PurgeParameters = new Uri(iconsPath + @"32x32\cmdPurgeParameters_32x32.bmp");
+            BitmapImage largeImage_PurgeParameters = new BitmapImage(uriLargeImage_PurgeParameters);
+
+            // create bitmap image for button
+            Uri uriSmallImage_PurgeParameters = new Uri(iconsPath + @"16x16\cmdPurgeParameters_16x16.bmp");
+            BitmapImage smallImage_PurgeParameters = new BitmapImage(uriSmallImage_PurgeParameters);
+
+            btnPurgeParameters.LargeImage = largeImage_PurgeParameters;
+            btnPurgeParameters.Image = smallImage_PurgeParameters;
+
+            #endregion
+
             #region About
 
             // Create a push button
@@ -202,11 +228,22 @@ namespace CRMTools
             List<RibbonItem> productionButtons = new List<RibbonItem>();
             // Add the buttons to the panel
             productionButtons.Add(pnlProductionPanel.AddItem(btnCreateRevitSheets));
-            productionButtons.Add(pnlProductionPanel.AddItem(btnSharedParameterCreator));
+            productionButtons.Add(pnlProductionPanel.AddItem(btnRevisionOnSheets));
             productionButtons.Add(pnlProductionPanel.AddItem(btnCreateSheetSet));
             productionButtons.Add(pnlProductionPanel.AddItem(btnSheetRenamer));
-            productionButtons.Add(pnlProductionPanel.AddItem(btnInsertParameters));
-            productionButtons.Add(pnlProductionPanel.AddItem(btnRevisionOnSheets));
+
+            #endregion
+
+            #region ManangePanelItems
+
+            // Create a ribbon panel
+            RibbonPanel pnlManagePanel = application.CreateRibbonPanel(tabName, "Manage");
+            // Add the buttons to the panel
+            List<RibbonItem> manageButtons = new List<RibbonItem>();
+            // Add the buttons to the panel
+            manageButtons.Add(pnlManagePanel.AddItem(btnSharedParameterCreator));
+            manageButtons.Add(pnlManagePanel.AddItem(btnInsertParameters));
+            manageButtons.Add(pnlManagePanel.AddItem(btnPurgeParameters));
 
             #endregion
 

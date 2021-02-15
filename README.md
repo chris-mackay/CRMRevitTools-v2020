@@ -7,7 +7,7 @@
 ### See folder content descriptions below
 
 ### CRMRevitTools_Help
-* Contains a folder structure for creating `.html` instruction pages that simply open in a browser. These instruction pages are opened using the Help (?) button in the Titlebar of the running command.
+* Contains a folder structure for creating `.html` instruction pages that simply open in a browser. These instruction pages are opened using the Help button where applicable.
   * *css*: Cascading Style Sheet for `.html` files
   *  *images*: Contains all images for `.html` files
 
@@ -39,13 +39,15 @@
 # Included Commands
 ## Create Sheets
 ![CreateSheets](Readme_Images/create_sheets.gif?raw=true "CreateSheets")
-## Shared Parameter Creator
-![SharedParameterCreator](Readme_Images/shared_parameter_creator.png?raw=true "SharedParameterCreator")
+## Revision On Sheets
+![RevisionOnSheets](Readme_Images/revision_on_sheets.gif?raw=true "RevisionOnSheets")
 ## Create Sheet Set
 ![CreateSheetSet](Readme_Images/create_sheet_set.gif?raw=true "CreateSheetSet")
 ## Sheet Renamer
 ![SheetRenamer](Readme_Images/sheet_renamer.gif?raw=true "SheetRenamer")
+## Shared Parameter Creator
+![SharedParameterCreator](Readme_Images/shared_parameter_creator.png?raw=true "SharedParameterCreator")
 ## Insert Parameters
 ![InsertParameters](Readme_Images/insert_parameters.gif?raw=true "InsertParameters")
-## Revision On Sheets
-![RevisionOnSheets](Readme_Images/revision_on_sheets.gif?raw=true "RevisionOnSheets")
+## Purge Parameters
+![PurgeParameters](Readme_Images/purge_parameters.gif?raw=true "PurgeParameters")

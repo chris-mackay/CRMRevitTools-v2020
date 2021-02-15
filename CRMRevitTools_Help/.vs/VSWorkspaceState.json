@@ -1,12 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\icons",
     "\\images",
     "\\images\\create_revit_sheets",
     "\\images\\shared_parameter_creator",
     "\\images\\sheet_renamer"
   ],
-  "SelectedNode": "\\import_categories_payees.html",
   "PreviewInSolutionExplorer": false
 }

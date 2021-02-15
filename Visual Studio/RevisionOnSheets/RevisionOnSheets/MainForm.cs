@@ -31,6 +31,7 @@ namespace RevisionOnSheets
 
         public IList<Element> viewSheets_ENTIRE_PROJECT = null;
         public IList<Element> revisions_ENTIRE_PROJECT = null;
+        public string REVIT_VERSION = "v2019";
         private bool shiftKeyIsDown = false;
 
         #endregion
