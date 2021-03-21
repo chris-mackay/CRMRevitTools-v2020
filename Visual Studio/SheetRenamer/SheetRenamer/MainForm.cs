@@ -1,4 +1,4 @@
-﻿//    Copyright(C) 2019 Christopher Ryan Mackay
+﻿//    Copyright(C) 2020 Christopher Ryan Mackay
 
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -36,7 +36,7 @@ namespace SheetRenamer
         List<string> oldFilesInDirectory = new List<string>();
 
         public IList<Element> viewSheetSets = null;
-        public string REVIT_VERSION = "v2020";
+        public string REVIT_VERSION = "v2019";
 
         #endregion
 
@@ -269,6 +269,64 @@ namespace SheetRenamer
                                       "Click OK to rename the PDF files. Make sure none of the\n" +
                                       "files are open before renaming.", myFont, brush, new System.Drawing.Point(0, 0));
             }
+        }
+
+        private void txtDrawingDirectory_TextChanged(object sender, EventArgs e)
+        {
+            string dir = txtDrawingDirectory.Text;
+
+            if (!DrawingDirectoryIsDefault(dir))
+            {
+                ckbDefault.Checked = false;
+                ckbDefault.Enabled = true;
+            }
+            else
+            {
+                ckbDefault.Checked = true;
+                ckbDefault.Enabled = false;
+            }
+        }
+
+        private bool DrawingDirectoryIsDefault(string dir)
+        {
+            bool flag = false;
+            dir = txtDrawingDirectory.Text;
+            
+            string savedDir = XMLSettings.GetSettingsValue(XMLSettings.ApplicationSettings.DrawingDirectory);
+
+            if (dir != string.Empty && System.IO.Directory.Exists(dir))
+            {
+                if (dir == savedDir)
+                    flag = true;
+                else
+                    flag = false;
+            }
+
+            return flag;
+        }
+
+        private void ckbDefault_CheckedChanged(object sender, EventArgs e)
+        {
+            string dir = txtDrawingDirectory.Text;
+            bool isChecked = ckbDefault.Checked;
+
+            if (isChecked)
+                if (dir != string.Empty && System.IO.Directory.Exists(dir))
+                {
+                    XMLSettings.SetSettingsValue(XMLSettings.ApplicationSettings.DrawingDirectory, dir);
+                    ckbDefault.Enabled = false;
+                }
+        }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+            XMLSettings.CreateAppSettings_SetDefaults();
+
+            string dir = XMLSettings.GetSettingsValue(XMLSettings.ApplicationSettings.DrawingDirectory);
+            txtDrawingDirectory.Text = dir;
+            txtDrawingDirectory.Select(dir.Length + 1, 0);
+
+            ckbDefault.Checked = DrawingDirectoryIsDefault(dir);
         }
     }
 }

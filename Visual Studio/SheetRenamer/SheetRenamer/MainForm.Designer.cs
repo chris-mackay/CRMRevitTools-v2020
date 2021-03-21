@@ -1,4 +1,4 @@
-﻿//    Copyright(C) 2019 Christopher Ryan Mackay
+﻿//    Copyright(C) 2020 Christopher Ryan Mackay
 
 //    This program is free software: you can redistribute it and/or modify
 //    it under the terms of the GNU General Public License as published by
@@ -44,6 +44,7 @@ namespace SheetRenamer
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblSheetSet = new System.Windows.Forms.Label();
             this.lblDrawingDirectory = new System.Windows.Forms.Label();
             this.btnBrowse = new System.Windows.Forms.Button();
@@ -52,7 +53,7 @@ namespace SheetRenamer
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ckbDefault = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +74,16 @@ namespace SheetRenamer
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(462, 260);
             this.panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.ErrorImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(438, 122);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
             // 
             // lblSheetSet
             // 
@@ -119,6 +130,7 @@ namespace SheetRenamer
             this.txtDrawingDirectory.Name = "txtDrawingDirectory";
             this.txtDrawingDirectory.Size = new System.Drawing.Size(357, 20);
             this.txtDrawingDirectory.TabIndex = 1;
+            this.txtDrawingDirectory.TextChanged += new System.EventHandler(this.txtDrawingDirectory_TextChanged);
             // 
             // btnOK
             // 
@@ -155,21 +167,23 @@ namespace SheetRenamer
             this.btnHelp.UseVisualStyleBackColor = true;
             this.btnHelp.Click += new System.EventHandler(this.btnHelp_Click);
             // 
-            // pictureBox1
+            // ckbDefault
             // 
-            this.pictureBox1.ErrorImage = null;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(438, 122);
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
+            this.ckbDefault.AutoSize = true;
+            this.ckbDefault.Location = new System.Drawing.Point(93, 278);
+            this.ckbDefault.Name = "ckbDefault";
+            this.ckbDefault.Size = new System.Drawing.Size(175, 17);
+            this.ckbDefault.TabIndex = 4;
+            this.ckbDefault.Text = "Set Drawing Directoy as default";
+            this.ckbDefault.UseVisualStyleBackColor = true;
+            this.ckbDefault.CheckedChanged += new System.EventHandler(this.ckbDefault_CheckedChanged);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(462, 307);
+            this.Controls.Add(this.ckbDefault);
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnOK);
@@ -182,10 +196,12 @@ namespace SheetRenamer
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Sheet Renamer";
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -201,5 +217,6 @@ namespace SheetRenamer
         private System.Windows.Forms.ComboBox cbSheetSets;
         private System.Windows.Forms.Button btnHelp;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.CheckBox ckbDefault;
     }
 }
