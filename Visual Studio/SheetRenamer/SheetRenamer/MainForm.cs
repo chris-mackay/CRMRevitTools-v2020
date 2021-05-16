@@ -82,14 +82,7 @@ namespace SheetRenamer
         {
             TaskDialog taskDialog = new TaskDialog("Sheet Renamer");
 
-            string dir = txtDrawingDirectory.Text.Trim();
-
-            string[] fileEntries = Directory.GetFiles(dir); //GET ALL THE FILES IN THE SELECTED DIRECTORY FOR RENAMING
-
-            foreach (string oldFile in fileEntries)
-            {
-                oldFilesInDirectory.Add(oldFile);
-            }
+            string dir = txtDrawingDirectory.Text;
 
             if (dir == string.Empty)
             {
@@ -118,41 +111,43 @@ namespace SheetRenamer
 
                 if (taskDialog.Show() == TaskDialogResult.Yes)
                 {
-                    List<string> newFiles = new List<string>();
                     ViewSet viewSet = null;
 
-                    //GET ALL THE SHEETS FROM THE SHEETSET SELECTED
-                    foreach (ViewSheetSet vs in viewSheetSets)
+                    foreach (ViewSheetSet vs in viewSheetSets) // Get the selected sheet set
                     {
                         if (vs.Name == cbSheetSets.SelectedItem.ToString())
                         {
-                            viewSet = vs.Views;
+                            viewSet = vs.Views; // Get all the sheets in the sheet set
                         }
                     }
 
-                    List<string> reOrderedFiles = new List<string>();
+                    string[] files = Directory.GetFiles(dir, "*.pdf", SearchOption.TopDirectoryOnly);
+                    List<string> oldFiles = new List<string>();
 
-                    //LOOP THROUGH ALL THE SHEETS FROM THE SHEETSET, CREATE NEW SHEET NAMES, AND FILL NEW FILE LIST
-                    foreach (ViewSheet oldSheet in viewSet)
+                    foreach (string file in files) oldFiles.Add(file);
+
+                    // <Key>   Old file to be renamed
+                    // <Value> New file name
+                    Dictionary<string, string> fileDic = new Dictionary<string, string>();
+
+                    foreach (ViewSheet v in viewSet) // Loop through all the sheets in the sheet set
                     {
-
                         string sheetNumber = string.Empty;
                         string sheetName = string.Empty;
 
-                        sheetNumber = oldSheet.SheetNumber;
-                        sheetName = oldSheet.Name;
+                        sheetNumber = v.SheetNumber;
+                        sheetName = v.Name;
 
-                        // SHEET NUMBER NEEDS TO BE CHECKED FOR THE FOLLOWING SPECIAL CHARACTERS BELOW
+                        // SHEET NUMBER needs to be checked for the following special characters below
 
-                        // THESE NEED TO BE REPLACED WITH '-'
+                        // These need to be replaced with '-'
                         // / * " .
 
-                        // REVIT CHECKS FOR THE FOLLOWING CHARACTERS BELOW AND DON'T NEED TO BE HANDLED
+                        // Revit checks for the following characters below and don't need to be handled
                         // \ : {} [] ; < > ? ` ~
 
-                        // REVIT & WINDOWS ALLOW THE CHARACTERS BELOW
+                        // REVIT & WINDOWS all the following characters below in file names
                         // ! @ # $ % ^ & * ( ) _ + = - ' ,
-
 
                         if (sheetNumber.Contains(@"/"))
                         {
@@ -176,35 +171,26 @@ namespace SheetRenamer
 
                         string rev = string.Empty;
 
-                        rev = oldSheet.LookupParameter("Current Revision").AsString();
+                        rev = v.LookupParameter("Current Revision").AsString();
 
                         string newFileName = string.Empty;
                         string newFile = string.Empty;
 
-                        newFileName = projectNumber + "-" + sheetNumber + "_" + rev + ".pdf"; //DPS STANDARD FILE NAMING CONVENTION (E.G. 816075-HE-100_0.pdf)
+                        newFileName = projectNumber + "-" + sheetNumber + "_" + rev + ".pdf";
                         newFile = dir + "\\" + newFileName;
 
-                        newFiles.Add(newFile);
-
-                        foreach (string file in oldFilesInDirectory)
-                        {
-                            if (file.Contains(sheetNumber))
-                            {
-                                reOrderedFiles.Add(file);
-                            }
-                        }
+                        string pattern = "- " + sheetNumber + " -";
+                        string oldFile = oldFiles.Find(a => a.Contains(pattern));
+                        fileDic.Add(oldFile, newFile);
                     }
 
-                    int index = 0;
-
-                    //LOOP THROUGH EACH FILE IN THE DIRECTORY AND RENAME THE FILE
-                    foreach (string oldFile in reOrderedFiles)
+                    foreach (KeyValuePair<string, string> entry in fileDic)
                     {
+                        string oldFile = entry.Key;
+                        string newFile = entry.Value;
+
                         try
                         {
-                            string newFile = string.Empty;
-                            newFile = newFiles[index];
-
                             if (File.Exists(newFile))
                             {
                                 File.Delete(newFile);
@@ -221,9 +207,6 @@ namespace SheetRenamer
                             errorTaskDialog.Show();
                             return;
                         }
-
-                        index += 1;
-
                     }
                     TaskDialog completeTaskDialog = new TaskDialog("Sheet Renamer");
                     completeTaskDialog.MainInstruction = "The sheets have been renamed successfully";
