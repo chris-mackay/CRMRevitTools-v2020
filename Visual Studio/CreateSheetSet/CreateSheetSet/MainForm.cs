@@ -18,6 +18,8 @@ using System.Collections.Generic;
 using System.Drawing;
 using Autodesk.Revit.DB;
 using Autodesk.Revit.UI;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace CreateSheetSet
 {
@@ -26,10 +28,10 @@ namespace CreateSheetSet
         #region CLASS_LEVEL_VARIABLES
 
         UIApplication myRevitUIApp = null;
-        Document myRevitDoc = null;
+        Document doc = null;
 
         public IList<Element> viewSheets = null;
-        public string REVIT_VERSION = "v2019";
+        public string REVIT_VERSION = "v2020";
 
         #endregion
 
@@ -43,9 +45,9 @@ namespace CreateSheetSet
             InitializeComponent();
 
             myRevitUIApp = incomingUIApp;
-            myRevitDoc = myRevitUIApp.ActiveUIDocument.Document;
+            doc = myRevitUIApp.ActiveUIDocument.Document;
 
-            FilteredElementCollector sheetsCol = new FilteredElementCollector(myRevitDoc);
+            FilteredElementCollector sheetsCol = new FilteredElementCollector(doc);
             viewSheets = sheetsCol.OfClass(typeof(ViewSheet)).ToElements();
 
             rbSequence.Checked = true;
@@ -59,6 +61,14 @@ namespace CreateSheetSet
             string prop = cbRevisions.SelectedItem.ToString();
             int selectedSequence = RevisionSequenceNumber(prop);
 
+            IList<Element> viewSheetSets = null;
+            FilteredElementCollector sheetSetsCol = new FilteredElementCollector(doc);
+            viewSheetSets = sheetSetsCol.OfClass(typeof(ViewSheetSet)).ToElements();
+
+            List<string> setNames = new List<string>();
+
+            foreach (Element el in viewSheetSets) setNames.Add(el.Name);
+
             ViewSet set = new ViewSet();
 
             foreach (ViewSheet vss in viewSheets)
@@ -67,7 +77,7 @@ namespace CreateSheetSet
 
                 foreach (ElementId i in revisionIds)
                 {
-                    Element elem = myRevitDoc.GetElement(i);
+                    Element elem = doc.GetElement(i);
                     Revision r = elem as Revision;
 
                     int sequenceNumber = r.SequenceNumber;
@@ -92,29 +102,63 @@ namespace CreateSheetSet
                 }
             }
 
-            PrintManager print = myRevitDoc.PrintManager;
+            PrintManager print = doc.PrintManager;
             print.PrintRange = PrintRange.Select;
             ViewSheetSetting viewSheetSetting = print.ViewSheetSetting;
             viewSheetSetting.CurrentViewSheetSet.Views = set;
 
-            Transaction trans = new Transaction(myRevitDoc, "Create Sheet Set");
+            Transaction trans = new Transaction(doc, "Create Sheet Set");
             trans.Start();
 
-            try
+            if (!setNames.Contains(prop))
             {
-                viewSheetSetting.SaveAs(prop);
-                TaskDialog dialog = new TaskDialog("Create Sheet Set");
-                dialog.MainInstruction = prop + " was created successfully";
-                trans.Commit();
-                dialog.Show();
+                try
+                {
+                    viewSheetSetting.SaveAs(prop);
+                    TaskDialog dialog = new TaskDialog("Create Sheet Set");
+                    dialog.MainInstruction = prop + " was created successfully";
+                    trans.Commit();
+                    dialog.Show();
+                }
+                catch (Exception ex)
+                {
+                    TaskDialog dialog = new TaskDialog("Create Sheet Set");
+                    dialog.MainInstruction = "Failed to create " + prop;
+                    dialog.MainContent = ex.Message;
+                    trans.RollBack();
+                    dialog.Show();
+                }
             }
-            catch (Exception ex)
+            else
             {
                 TaskDialog dialog = new TaskDialog("Create Sheet Set");
-                dialog.MainInstruction = "Failed to create " + prop;
-                dialog.MainContent = ex.Message;
-                trans.RollBack();
-                dialog.Show();
+                dialog.MainInstruction = prop + " already exists in the project.";
+                dialog.MainContent = "Would you like to overwrite it?";
+                dialog.CommonButtons = TaskDialogCommonButtons.Yes | TaskDialogCommonButtons.No;
+                dialog.DefaultButton = TaskDialogResult.No;
+
+                if (dialog.Show() == TaskDialogResult.Yes)
+                {
+                    Element v = viewSheetSets.FirstOrDefault(vs => vs.Name == prop);
+                    doc.Delete(v.Id);
+
+                    try
+                    {
+                        viewSheetSetting.SaveAs(prop);
+                        TaskDialog d = new TaskDialog("Create Sheet Set");
+                        d.MainInstruction = prop + " was created successfully";
+                        trans.Commit();
+                        d.Show();
+                    }
+                    catch (Exception ex)
+                    {
+                        TaskDialog d = new TaskDialog("Create Sheet Set");
+                        d.MainInstruction = "Failed to create " + prop;
+                        d.MainContent = ex.Message;
+                        trans.RollBack();
+                        d.Show();
+                    }
+                }
             }
         }
 
@@ -158,7 +202,7 @@ namespace CreateSheetSet
 
                 foreach (ElementId i in revisionIds)
                 {
-                    Element elem = myRevitDoc.GetElement(i);
+                    Element elem = doc.GetElement(i);
                     Revision r = elem as Revision;
 
                     if (rbSequence.Checked)

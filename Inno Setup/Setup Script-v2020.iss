@@ -1,7 +1,7 @@
 #define RevitVersion "2020"
 #define MyAppName "CRMRevitTools-v2020"
-#define MyAppVersion "1.0.8"
-#define MyVersionInfoVersion "1.0.8"
+#define MyAppVersion "1.0.9"
+#define MyVersionInfoVersion "1.0.9"
 #define MyAppPublisher "Christopher Ryan Mackay"
 
 [Setup]
