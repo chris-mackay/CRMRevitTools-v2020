@@ -22,7 +22,7 @@ namespace About
 {
     public partial class MainForm : System.Windows.Forms.Form
     {
-        private string version = "v1.0.9";
+        private string version = "v1.1.0";
 
         public MainForm()
         {

@@ -59,9 +59,10 @@ namespace About
             // 
             this.btnOK.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOK.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnOK.Location = new System.Drawing.Point(317, 201);
+            this.btnOK.Location = new System.Drawing.Point(476, 309);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 23);
+            this.btnOK.Size = new System.Drawing.Size(112, 35);
             this.btnOK.TabIndex = 9;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
@@ -71,9 +72,10 @@ namespace About
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(18, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(93, 13);
+            this.label1.Size = new System.Drawing.Size(143, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "CRM Tools-v2020";
             // 
@@ -81,18 +83,20 @@ namespace About
             // 
             this.lblVersion.AutoSize = true;
             this.lblVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVersion.Location = new System.Drawing.Point(12, 26);
+            this.lblVersion.Location = new System.Drawing.Point(18, 40);
+            this.lblVersion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(45, 13);
+            this.lblVersion.Size = new System.Drawing.Size(71, 20);
             this.lblVersion.TabIndex = 1;
             this.lblVersion.Text = "Version ";
             // 
             // lblCurrentChanglog
             // 
             this.lblCurrentChanglog.AutoSize = true;
-            this.lblCurrentChanglog.Location = new System.Drawing.Point(12, 61);
+            this.lblCurrentChanglog.Location = new System.Drawing.Point(18, 94);
+            this.lblCurrentChanglog.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCurrentChanglog.Name = "lblCurrentChanglog";
-            this.lblCurrentChanglog.Size = new System.Drawing.Size(55, 13);
+            this.lblCurrentChanglog.Size = new System.Drawing.Size(80, 20);
             this.lblCurrentChanglog.TabIndex = 3;
             this.lblCurrentChanglog.TabStop = true;
             this.lblCurrentChanglog.Text = "linkLabel1";
@@ -101,9 +105,10 @@ namespace About
             // lblChangelog
             // 
             this.lblChangelog.AutoSize = true;
-            this.lblChangelog.Location = new System.Drawing.Point(12, 90);
+            this.lblChangelog.Location = new System.Drawing.Point(18, 138);
+            this.lblChangelog.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblChangelog.Name = "lblChangelog";
-            this.lblChangelog.Size = new System.Drawing.Size(55, 13);
+            this.lblChangelog.Size = new System.Drawing.Size(80, 20);
             this.lblChangelog.TabIndex = 4;
             this.lblChangelog.TabStop = true;
             this.lblChangelog.Text = "linkLabel1";
@@ -112,45 +117,50 @@ namespace About
             // label2
             // 
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.Location = new System.Drawing.Point(12, 188);
+            this.label2.Location = new System.Drawing.Point(18, 289);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(380, 1);
+            this.label2.Size = new System.Drawing.Size(570, 2);
             this.label2.TabIndex = 8;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 44);
+            this.label3.Location = new System.Drawing.Point(18, 68);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(168, 13);
+            this.label3.Size = new System.Drawing.Size(301, 20);
             this.label3.TabIndex = 2;
-            this.label3.Text = "© 2020 Christopher Ryan Mackay";
+            this.label3.Text = "© 2020-2021 Christopher Ryan Mackay";
             // 
             // label5
             // 
             this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label5.Location = new System.Drawing.Point(12, 114);
+            this.label5.Location = new System.Drawing.Point(18, 175);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(380, 1);
+            this.label5.Size = new System.Drawing.Size(570, 2);
             this.label5.TabIndex = 5;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 125);
+            this.label6.Location = new System.Drawing.Point(18, 192);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(236, 13);
+            this.label6.Size = new System.Drawing.Size(373, 20);
             this.label6.TabIndex = 6;
             this.label6.Text = "CRM Tools is an open-source project on GitHub.";
             // 
             // lblSource
             // 
             this.lblSource.AutoSize = true;
-            this.lblSource.Location = new System.Drawing.Point(12, 148);
+            this.lblSource.Location = new System.Drawing.Point(18, 228);
+            this.lblSource.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSource.Name = "lblSource";
-            this.lblSource.Size = new System.Drawing.Size(55, 13);
+            this.lblSource.Size = new System.Drawing.Size(80, 20);
             this.lblSource.TabIndex = 7;
             this.lblSource.TabStop = true;
             this.lblSource.Text = "linkLabel1";
@@ -159,9 +169,9 @@ namespace About
             // MainForm
             // 
             this.AcceptButton = this.btnOK;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(404, 236);
+            this.ClientSize = new System.Drawing.Size(606, 363);
             this.Controls.Add(this.lblSource);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label2);
@@ -173,6 +183,7 @@ namespace About
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnOK);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MainForm";

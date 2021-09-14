@@ -59,7 +59,6 @@ namespace CreateSheetSet
         private void btnCreate_Click(object sender, EventArgs e)
         {
             string prop = cbRevisions.SelectedItem.ToString();
-            int selectedSequence = RevisionSequenceNumber(prop);
 
             IList<Element> viewSheetSets = null;
             FilteredElementCollector sheetSetsCol = new FilteredElementCollector(doc);
@@ -86,6 +85,8 @@ namespace CreateSheetSet
 
                     if (rbSequence.Checked)
                     {
+                        int selectedSequence = RevisionSequenceNumber(prop);
+
                         if (selectedSequence == sequenceNumber)
                             set.Insert(vss);
                     }
